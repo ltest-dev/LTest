@@ -216,14 +216,16 @@ class computeCombinations = object(self)
       let alldefs = List.fold_left (fun acc id -> (id, (Hashtbl.find currentDef id) - 1) :: acc ) [] lvalIds in
       (* 3 *)
       let nl = List.fold_left (fun acc (vid,nbDef) ->
-          let normalDefs = List.init nbDef (fun idDef -> (vid,idDef+1)) in
+          let normalDefs =
+            Array.to_list (Array.init nbDef (fun idDef -> (vid,idDef+1))) in
           let inLoopDefs =
             if not (Stack.is_empty inLoopId) && Hashtbl.mem varLoopID (vid,Stack.top inLoopId) then begin
               let lid = get_varLoop_id vid (Stack.top inLoopId) in
               let currDef = (Hashtbl.find currentDef lid) in
               let comingNext = (Hashtbl.find nBVarDefs lid) - currDef + 1 in
               let totalDef = Hashtbl.find nBVarDefs vid in
-              List.init comingNext (fun idDef -> (vid,totalDef+currDef+idDef))
+              Array.to_list (Array.init comingNext
+                               (fun idDef -> (vid,totalDef+currDef+idDef)))
             end
             else
               []
