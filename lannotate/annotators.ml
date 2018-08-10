@@ -71,15 +71,13 @@ let annotate_with annotator ?(id=next) ?(collect=nocollect) ast =
 
 let annotate filename names ?(id=next) ?(collect=nocollect) ast =
   filen := filename;
-  let previousAnn = ref [] in
   let f name =
     let ann = Hashtbl.find_opt annotators name in
     match ann with
     | None ->
       Options.warning "unknown annotators `%s`" name
     | Some(ann) ->
-      annotate_with ~id ~collect ann ast;
-      previousAnn := name :: !previousAnn
+      annotate_with ~id ~collect ann ast
   in
   List.iter f names
 
