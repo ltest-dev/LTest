@@ -11,13 +11,17 @@ LAnnotate is a Frama-C plugin.
 
 Installation
 ------------
-LAnnotate requires Frama-C (Chlorine or latter) to be installed. A patch (Chlorine.patch) is available for LUncov compatibility.
-Once Frama-C is installed, compile and install LAnnotate:
+LAnnotate requires Frama-C 17 (Chlorine) or later to be installed.
+A patch (Chlorine.patch) is available for LUncov compatibility.
+Once Frama-C is installed, run autoconf, configure, compile and install
+LAnnotate:
 
+    autoconf
+    ./configure
     make
     make install
 
-The second command may need to be run as root (or sudo) depending on your
+The last command may need to be run as root (or sudo) depending on your
 Frama-C installation.
 
 Usage
@@ -56,7 +60,7 @@ Authors
 - Omar Chebaro
 - Mickaël Delahaye
 - Michaël Marcozzi
-- Thibault Martin  
+- Thibault Martin
 Also many thanks to the rest of LTest's team:
 - Nikolai Kosmatov
 - Sébastien Bardin
