@@ -1,0 +1,31 @@
+[kernel] Parsing tests/luncov_value/test_impossible_cond_vwap.c (with preprocessing)
+[luncov] start weakest-precondition-based detection
+[kernel] Parsing tests/luncov_value/test_impossible_cond_vwap.c (with preprocessing)
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo] Goal typed_main_assert : Unknown
+[wp] Proved goals:    0 / 1
+  Alt-Ergo:        0  (unknown: 1)
+[luncov] label #2 found 'unknown' by wp
+[luncov] skip label #3
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo] Goal typed_main_assert : Unknown
+[wp] Proved goals:    0 / 1
+  Alt-Ergo:        0  (unknown: 1)
+[luncov] label #1 found 'unknown' by wp
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo] Goal typed_main_assert : Unknown
+[wp] Proved goals:    0 / 1
+  Alt-Ergo:        0  (unknown: 1)
+[luncov] label #4 found 'unknown' by wp
+[luncov] WP-based detection done
+[luncov] label statistics
+  total number of labels        4
+  number of covered             0
+  number of uncoverable         1
+  number of unknown             3
+  coverage ratio             0.00% (was 0.00%)
+[luncov] label data written to tests/luncov_value/result/test_impossible_cond_vwap.labels
+[luncov] Execution time: 2.046527 s
