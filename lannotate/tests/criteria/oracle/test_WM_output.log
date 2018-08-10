@@ -1,0 +1,6 @@
+[kernel] Parsing tests/criteria/test_WM.c (with preprocessing)
+[kernel] Parsing tests/criteria/test_WM.c (with preprocessing)
+[lannot] apply annotations for WM
+[lannot] write modified C file (to tests/criteria/result/test_WM_labels.c)
+[lannot] write label data (to tests/criteria/result/test_WM_labels.labels)
+[lannot] finished

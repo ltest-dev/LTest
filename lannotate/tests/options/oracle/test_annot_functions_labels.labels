@@ -1,0 +1,10 @@
+# id, status, tag, origin_loc, current_loc, emitter, exec_time
+1,unknown,CC,/home/tmartin/Documents/Labels/LTest/lannotate/tests/options/test_annot_functions.c:10,,lannot,0.
+2,unknown,CC,/home/tmartin/Documents/Labels/LTest/lannotate/tests/options/test_annot_functions.c:10,,lannot,0.
+3,unknown,CC,/home/tmartin/Documents/Labels/LTest/lannotate/tests/options/test_annot_functions.c:36,,lannot,0.
+4,unknown,CC,/home/tmartin/Documents/Labels/LTest/lannotate/tests/options/test_annot_functions.c:36,,lannot,0.
+5,unknown,CC,/home/tmartin/Documents/Labels/LTest/lannotate/tests/options/test_annot_functions.c:36,,lannot,0.
+6,unknown,CC,/home/tmartin/Documents/Labels/LTest/lannotate/tests/options/test_annot_functions.c:36,,lannot,0.
+7,unknown,FC,/home/tmartin/Documents/Labels/LTest/lannotate/tests/options/test_annot_functions.c:5,,lannot,0.
+8,unknown,FC,/home/tmartin/Documents/Labels/LTest/lannotate/tests/options/test_annot_functions.c:9,,lannot,0.
+9,unknown,FC,/home/tmartin/Documents/Labels/LTest/lannotate/tests/options/test_annot_functions.c:32,,lannot,0.

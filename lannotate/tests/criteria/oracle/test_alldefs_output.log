@@ -1,0 +1,8 @@
+[kernel] Parsing tests/criteria/test_alldefs.c (with preprocessing)
+[kernel] Parsing tests/criteria/test_alldefs.c (with preprocessing)
+[lannot] apply annotations for alldefs
+[lannot] write hyperlabel data (to tests/criteria/result/test_alldefs_labels.hyperlabels)
+[lannot] Total number of sequences = 36
+[lannot] write modified C file (to tests/criteria/result/test_alldefs_labels.c)
+[lannot] write label data (to tests/criteria/result/test_alldefs_labels.labels)
+[lannot] finished

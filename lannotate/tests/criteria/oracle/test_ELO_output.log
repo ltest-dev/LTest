@@ -1,0 +1,7 @@
+[kernel] Parsing tests/criteria/test_ELO.c (with preprocessing)
+[kernel] Parsing tests/criteria/test_ELO.c (with preprocessing)
+[lannot] apply annotations for ELO
+[lannot] Warning: Handle Do While enabled : Empty loops will be considered as Do..While
+[lannot] write modified C file (to tests/criteria/result/test_ELO_labels.c)
+[lannot] write label data (to tests/criteria/result/test_ELO_labels.labels)
+[lannot] finished

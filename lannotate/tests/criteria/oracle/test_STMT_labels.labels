@@ -1,0 +1,23 @@
+# id, status, tag, origin_loc, current_loc, emitter, exec_time
+1,unknown,STMT,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_STMT.c:5,,lannot,0.
+2,unknown,STMT,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_STMT.c:6,,lannot,0.
+3,unknown,STMT,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_STMT.c:9,,lannot,0.
+4,unknown,STMT,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_STMT.c:13,,lannot,0.
+5,unknown,STMT,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_STMT.c:13,,lannot,0.
+6,unknown,STMT,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_STMT.c:14,,lannot,0.
+7,unknown,STMT,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_STMT.c:14,,lannot,0.
+8,unknown,STMT,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_STMT.c:18,,lannot,0.
+9,unknown,STMT,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_STMT.c:13,,lannot,0.
+10,unknown,STMT,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_STMT.c:22,,lannot,0.
+11,unknown,STMT,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_STMT.c:22,,lannot,0.
+12,unknown,STMT,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_STMT.c:22,,lannot,0.
+13,unknown,STMT,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_STMT.c:27,,lannot,0.
+14,unknown,STMT,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_STMT.c:29,,lannot,0.
+15,unknown,STMT,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_STMT.c:29,,lannot,0.
+16,unknown,STMT,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_STMT.c:30,,lannot,0.
+17,unknown,STMT,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_STMT.c:32,,lannot,0.
+18,unknown,STMT,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_STMT.c:34,,lannot,0.
+19,unknown,STMT,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_STMT.c:35,,lannot,0.
+20,unknown,STMT,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_STMT.c:35,,lannot,0.
+21,unknown,STMT,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_STMT.c:35,,lannot,0.
+22,unknown,STMT,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_STMT.c:37,,lannot,0.

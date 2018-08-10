@@ -1,0 +1,9 @@
+[kernel] Parsing tests/criteria/test_SLO.c (with preprocessing)
+[kernel] Parsing tests/criteria/test_SLO.c (with preprocessing)
+[lannot] apply annotations for SLO
+[lannot] Warning: Handle Do While enabled : Empty loops will be considered as Do..While
+[lannot] write hyperlabel data (to tests/criteria/result/test_SLO_labels.hyperlabels)
+[lannot] Total number of labels = 36
+[lannot] write modified C file (to tests/criteria/result/test_SLO_labels.c)
+[lannot] write label data (to tests/criteria/result/test_SLO_labels.labels)
+[lannot] finished

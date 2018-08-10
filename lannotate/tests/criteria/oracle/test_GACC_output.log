@@ -1,0 +1,6 @@
+[kernel] Parsing tests/criteria/test_GACC.c (with preprocessing)
+[kernel] Parsing tests/criteria/test_GACC.c (with preprocessing)
+[lannot] apply annotations for GACC
+[lannot] write modified C file (to tests/criteria/result/test_GACC_labels.c)
+[lannot] write label data (to tests/criteria/result/test_GACC_labels.labels)
+[lannot] finished
