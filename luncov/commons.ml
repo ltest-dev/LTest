@@ -44,7 +44,7 @@ let rec last_element list =
   match list with
   | [] -> None
   | [e] -> Some(e)
-  | h::t -> last_element t
+  | _::t -> last_element t
 
 let dump_ast ?file ?name () =
   let file = match file with Some file -> file | None -> Ast.get () in

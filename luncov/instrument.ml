@@ -213,7 +213,7 @@ class label_selector lblid info prj = object (self)
          else v :: nl
       ) [] slocals
 
-  method! vfunc f =
+  method! vfunc _ =
     let kf = Extlib.the self#current_kf in
     into_lbl_fun <- kf == label_kf;
     Cil.DoChildrenPost (fun f ->
