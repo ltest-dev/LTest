@@ -317,7 +317,7 @@ let compute_hl () : string =
       Hashtbl.add regroup (vid,defId) [ids]
   in
   List.iter fill !idList;
-  if String.equal "-" !symb then
+  if "-" = !symb then
     Hashtbl.fold (fun _ seqs str ->
         List.fold_left (fun acc s -> "<s" ^ string_of_int s ^"|; ;>,\n" ^ acc ) str seqs
       ) regroup ""
