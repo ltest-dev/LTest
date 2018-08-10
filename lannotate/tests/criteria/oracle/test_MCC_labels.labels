@@ -1,5 +1,5 @@
 # id, status, tag, origin_loc, current_loc, emitter, exec_time
-1,unknown,MCC,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_MCC.c:7,,lannot,0.
-2,unknown,MCC,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_MCC.c:7,,lannot,0.
-3,unknown,MCC,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_MCC.c:7,,lannot,0.
-4,unknown,MCC,/home/tmartin/Documents/Labels/LTest/lannotate/tests/criteria/test_MCC.c:7,,lannot,0.
+1,unknown,MCC,test_MCC.c:7,,lannot,0.
+2,unknown,MCC,test_MCC.c:7,,lannot,0.
+3,unknown,MCC,test_MCC.c:7,,lannot,0.
+4,unknown,MCC,test_MCC.c:7,,lannot,0.

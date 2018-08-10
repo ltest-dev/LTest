@@ -183,7 +183,7 @@ $(EXEC).opt: $(OPTOBJS)
 	$(CAMLYACC) $<
 
 foreignCode.ml: uthash.h utlist.h runtime.h runtime.c detection.h
-	(\
+	@(\
           echo -n 'let uthash_h = ForeignCodeUtils.lazy_create_file "'; cat uthash.h | sed 's/["\\]/\\&/g'; echo '" "lreplay_uthash" ".h";;'; \
           echo -n 'let utlist_h = ForeignCodeUtils.lazy_create_file "'; cat utlist.h | sed 's/["\\]/\\&/g'; echo '" "lreplay_utlist" ".h";;'; \
 	  echo -n 'let runtime_h = ForeignCodeUtils.lazy_create_file "'; cat runtime.h | sed 's/["\\]/\\&/g'; echo '" "lreplay_runtime" ".h";;'; \

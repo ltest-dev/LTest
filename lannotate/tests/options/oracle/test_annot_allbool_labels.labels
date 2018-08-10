@@ -1,9 +1,9 @@
 # id, status, tag, origin_loc, current_loc, emitter, exec_time
-1,unknown,DC,/home/tmartin/Documents/Labels/LTest/lannotate/tests/options/test_annot_allbool.c:6,,lannot,0.
-2,unknown,DC,/home/tmartin/Documents/Labels/LTest/lannotate/tests/options/test_annot_allbool.c:6,,lannot,0.
-3,unknown,DC,/home/tmartin/Documents/Labels/LTest/lannotate/tests/options/test_annot_allbool.c:10,,lannot,0.
-4,unknown,DC,/home/tmartin/Documents/Labels/LTest/lannotate/tests/options/test_annot_allbool.c:10,,lannot,0.
-5,unknown,DC,/home/tmartin/Documents/Labels/LTest/lannotate/tests/options/test_annot_allbool.c:16,,lannot,0.
-6,unknown,DC,/home/tmartin/Documents/Labels/LTest/lannotate/tests/options/test_annot_allbool.c:16,,lannot,0.
-7,unknown,DC,/home/tmartin/Documents/Labels/LTest/lannotate/tests/options/test_annot_allbool.c:19,,lannot,0.
-8,unknown,DC,/home/tmartin/Documents/Labels/LTest/lannotate/tests/options/test_annot_allbool.c:19,,lannot,0.
+1,unknown,DC,test_annot_allbool.c:6,,lannot,0.
+2,unknown,DC,test_annot_allbool.c:6,,lannot,0.
+3,unknown,DC,test_annot_allbool.c:10,,lannot,0.
+4,unknown,DC,test_annot_allbool.c:10,,lannot,0.
+5,unknown,DC,test_annot_allbool.c:16,,lannot,0.
+6,unknown,DC,test_annot_allbool.c:16,,lannot,0.
+7,unknown,DC,test_annot_allbool.c:19,,lannot,0.
+8,unknown,DC,test_annot_allbool.c:19,,lannot,0.
