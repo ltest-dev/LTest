@@ -1,0 +1,4 @@
+#!/bin/sh -x
+frama-c -luncov \
+  -lib-entry -context-width 128 -val-ilevel 64 -rte -slevel 50  \
+  -wp-model typed+cint+cfloat+var "$@"
