@@ -116,7 +116,7 @@ let inner mk_label = object(_)
       Cil.DoChildrenPost (fun stmt ->
           begin
             match stmt.skind with
-            | Loop (ca,b,l,s1,s2) ->
+            | Loop (_,b,_,_,_) ->
               let found = ref false in
               (* Cf. doc/loops.markdown for more info *)
               let len = List.length b.bstmts in
@@ -176,7 +176,7 @@ let outter () = object(_)
 
   method! vstmt_aux stmt =
     match stmt.skind with
-    | Loop (_,_,l,_,_) ->
+    | Loop _ ->
       let sid = Annotators.next () in
       let set = mkSeq sid stmt.sid 1 in
       let use = mkSeq sid stmt.sid 2 in
@@ -185,7 +185,7 @@ let outter () = object(_)
       Cil.DoChildrenPost (fun stmt ->
           let newLoop =
             match stmt.skind with
-            | Loop (ca,b,l,s1,s2) ->
+            | Loop (_,b,_,_,_) ->
               let found = ref false in
               (* Cf. doc/loops.markdown for more info *)
               let len = List.length b.bstmts in
@@ -276,7 +276,7 @@ include Annotators.Register (struct
     let name = "SLO"
     let help = "Skip Loop at least Once Coverage"
 
-    let apply mk_label ast =
+    let apply _ ast =
       warning();
       Visitor.visitFramacFileSameGlobals (outter ()) ast;
       gen_hyperlabels_SLO ()

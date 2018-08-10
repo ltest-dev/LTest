@@ -276,7 +276,7 @@ class addLabels = object(self)
 
   method! vexpr (expr : Cil_types.exp) : Cil_types.exp Cil.visitAction =
     match expr.enode with
-    | Lval (Var v,offset) ->
+    | Lval (Var v, _) ->
       let vid = v.vid in
       if not v.vglob && not (v.vname = "__retres")
          && not v.vtemp && Hashtbl.mem nBVarDefs vid then begin

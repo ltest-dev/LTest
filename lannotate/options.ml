@@ -140,7 +140,6 @@ module LimitDelta = Int (struct
     let default = 0
   end)
 
-(* Pour polarSSL *)
 module Inline = True (struct
     let option_name = "-lannot-inline"
     let help = "Annotate inline functions (Default : true)"
@@ -165,6 +164,5 @@ module MaxContextPath = Int (struct
 *)
 module HandleDoWhile = True (struct
     let option_name = "-lannot-handle-dowhile"
-    let arg_name = "NUM"
     let help = "Do..While.. will be supported in loops criterias, but empty loops will also be considered as Do..While.. (default: true)"
   end)

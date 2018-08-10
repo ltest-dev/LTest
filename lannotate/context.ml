@@ -76,7 +76,7 @@ let rec n_cartesian_product (ll : (int*int) list list) =
       (List.fold_left (fun acc i -> (List.fold_left (fun acc2 r -> (i :: r)::acc2) [] rest)::acc) [] h)
 
 (** Count the number of LVals in an expression *)
-class multiUseExp = object(self)
+class multiUseExp = object(_)
   inherit Visitor.frama_c_inplace
 
   val mutable id_LVals = []
@@ -430,7 +430,7 @@ class addLabels = object(self)
       (* For each combination of this expr, and the last sequence *)
       let combIds = Hashtbl.find multiUses eid in
       let f idComb =
-        let (len,sid) = Hashtbl.find combsID idComb in
+        let (len,_) = Hashtbl.find combsID idComb in
         self#mkSeq idComb "N/A" len len;
         totalLabels := len + !totalLabels;
         idList := (eid,idComb) :: !idList
@@ -469,7 +469,7 @@ let gen_hyperlabels () =
 let visite file =
   Visitor.visitFramacFileSameGlobals (new countDef :> Visitor.frama_c_visitor) file;
   Visitor.visitFramacFileSameGlobals (new computeCombinations :> Visitor.frama_c_visitor) file;
-  Hashtbl.iter (fun k v -> Hashtbl.replace currentDef k 1) currentDef;
+  Hashtbl.iter (fun k _ -> Hashtbl.replace currentDef k 1) currentDef;
   Visitor.visitFramacFileSameGlobals (new addLabels :> Visitor.frama_c_visitor) file
 
 (**
