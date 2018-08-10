@@ -17,6 +17,10 @@
 META.frama-c-*
 ptests_config
 .merlin
+autom4te.cache
+config.log
+config.status
+configure
 
 #Lreplay
 lreplay/lreplay
@@ -24,3 +28,5 @@ lreplay/lexer.ml
 lreplay/parser.ml
 lreplay/parser.mli
 lreplay/foreignCode.ml
+
+lannotate/Makefile
