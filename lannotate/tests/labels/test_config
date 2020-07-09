@@ -1,0 +1,3 @@
+LOG: @PTEST_NAME@_labels.c
+LOG: @PTEST_NAME@_labels.labels
+OPT: -lannot-o @PTEST_DIR@/result/@PTEST_NAME@_labels.c

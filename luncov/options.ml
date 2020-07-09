@@ -2,21 +2,21 @@
 (*                                                                        *)
 (*  This file is part of Frama-C.                                         *)
 (*                                                                        *)
-(*  Copyright (C) 2013-2018                                               *)
+(*  Copyright (C) 2007-2020                                               *)
 (*    CEA (Commissariat à l'énergie atomique et aux énergies              *)
 (*         alternatives)                                                  *)
 (*                                                                        *)
-(*  You may redistribute it and/or modify it under the terms of the GNU   *)
+(*  you can redistribute it and/or modify it under the terms of the GNU   *)
 (*  Lesser General Public License as published by the Free Software       *)
-(*  Foundation, version 3.                                                *)
+(*  Foundation, version 2.1.                                              *)
 (*                                                                        *)
-(*  It is distributed in the hope that it will be useful, but WITHOUT     *)
-(*  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY    *)
-(*  or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General      *)
-(*  Public License for more details.                                      *)
+(*  It is distributed in the hope that it will be useful,                 *)
+(*  but WITHOUT ANY WARRANTY; without even the implied warranty of        *)
+(*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *)
+(*  GNU Lesser General Public License for more details.                   *)
 (*                                                                        *)
-(*  See the GNU Lesser General Public License version 3 for more          *)
-(*  details (enclosed in the file LICENSE).                               *)
+(*  See the GNU Lesser General Public License version 2.1                 *)
+(*  for more details (enclosed in the file licenses/LGPLv2.1).            *)
 (*                                                                        *)
 (**************************************************************************)
 
@@ -62,18 +62,19 @@ module WP = False (struct
 let () = WP.add_set_hook (fun _old b -> if b then Enabled.on ())
 
 let () = Parameter_customize.set_group methods
-module Value = False (struct
-    let option_name = "-luncov-value"
-    let help = "enable value analysis-based detection \
+module EVA = False (struct
+    let option_name = "-luncov-eva"
+    let help = "enable EVA-based detection \
                 (enabled by default, implies -luncov)"
   end)
-let () = Value.add_aliases [ "-luncov-va" ]
-let () = Value.add_set_hook (fun _old b -> if b then Enabled.on ())
+let () = EVA.add_aliases [ "-luncov-value" ]
+let () = EVA.add_set_hook (fun _old b -> if b then Enabled.on ())
 
 let () = Parameter_customize.set_group methods
+let () = Parameter_customize.is_invisible ()
 module VWAP = False (struct
     let option_name = "-luncov-vwap"
-    let help = "enable VA + WP computation \
+    let help = "enable EVA + WP computation \
                 (disabled by default, implies -luncov)"
   end)
 let () = VWAP.add_set_hook (fun _old b -> if b then Enabled.on ())
@@ -95,6 +96,12 @@ module Force = False (struct
     let help = "force the computation for all labels, \
                 including those marked covered or uncoverable \
                 (disabled by default)"
+  end)
+
+let () = Parameter_customize.set_group general
+module Time = True (struct
+    let option_name = "-luncov-show-time"
+    let help = "Display execution time at the end (enabled by default)"
   end)
 
 let () = Parameter_customize.set_group general
@@ -136,6 +143,15 @@ module LabelsFile = String (struct
   end)
 
 let () = Parameter_customize.set_group general
+module HyperlabelsFile = String (struct
+    let default = ""
+    let option_name = "-luncov-hyperlabels"
+    let arg_name = "f"
+    let help = "set the filename of the hyperlabel data \
+                (by default <input file>.hyperlabels)"
+  end)
+
+let () = Parameter_customize.set_group general
 module WPMaxNbLabelPerCall = Int (struct
     let option_name = "-luncov-wp-max-labels-per-call"
     let arg_name = "n"
@@ -163,21 +179,30 @@ module WpMaxMemory = Int (struct
   end)
 
 let () = Parameter_customize.set_group general
-module WpKillTimeout = Int (struct
+module WpTimeout = Int (struct
     let option_name = "-luncov-wp-timeout"
     let arg_name = "t"
-    let default = 10
-    let help = "set the timeout (in seconds) for each complete WP run. \
-                (10s by default)"
+    let default = 10800
+    let help = "set the timeout (in seconds) for WP complete analysis. \
+                (10800s (3h) by default)"
   end)
 
 let () = Parameter_customize.set_group general
-module WpTimeout = String (struct
+module WpKillTimeout = Int (struct
+     let option_name = "-luncov-wp-kill-timeout"
+     let arg_name = "t"
+    let default = 10
+    let help = "set the timeout (in seconds) for each complete WP run. \
+                (10s by default)"
+   end)
+
+let () = Parameter_customize.set_group general
+module SolverTimeout = String (struct
     let option_name = "-luncov-wp-solver-timeout"
     let arg_name = "t"
-    let default = "10."
+    let default = "1."
     let help = "set the timeout (in seconds) for every solver call by WP. \
-                (10s by default)"
+                (1s by default)"
   end)
 
 let () = Parameter_customize.set_group general

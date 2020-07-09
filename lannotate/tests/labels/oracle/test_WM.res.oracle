@@ -1,0 +1,6 @@
+[kernel] Parsing tests/labels/test_WM.c (with preprocessing)
+[lannot] apply annotations for WM
+[lannot] write modified C file (to tests/labels/result/test_WM_labels.c)
+[lannot] write label data (to tests/labels/result/test_WM_labels.labels)
+[lannot] 23 labels/sequences created
+[lannot] finished

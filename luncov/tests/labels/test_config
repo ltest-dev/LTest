@@ -1,0 +1,3 @@
+LOG: @PTEST_NAME@.labels
+EXEC: rm -f @PTEST_DIR@/result/@PTEST_NAME@.labels
+OPT: -luncov-no-show-time -luncov-share ./share -luncov-labels @PTEST_DIR@/result/@PTEST_NAME@.labels

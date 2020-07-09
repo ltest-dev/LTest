@@ -1,0 +1,1046 @@
+[kernel] Parsing tests/luncov/quandrant_bindings_wp.c (with preprocessing)
+[LUncov] hyperlabel file tests/luncov/result/quandrant_bindings_wp.hyperlabels found.
+[luncov] start weakest-precondition-based detection
+[kernel] Parsing tests/luncov/quandrant_bindings_wp.c (with preprocessing)
+[luncov] checking labels/bindings #43·#44
+[luncov] checking label #43
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #43 found 'unknown' by wp
+[luncov] checking label #44
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #44 found 'unknown' by wp
+[luncov] checking bindings #43·#44
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_5 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_6 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_7 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_8 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #43·#44 found unknown by wp
+[luncov] checking labels/bindings #29·#30
+[luncov] checking label #29
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #29 found 'unknown' by wp
+[luncov] checking label #30
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #30 found 'unknown' by wp
+[luncov] checking bindings #29·#30
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #29·#30 found unknown by wp
+[luncov] checking labels/bindings #35·#36
+[luncov] checking label #35
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #35 found 'unknown' by wp
+[luncov] checking label #36
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #36 found 'unknown' by wp
+[luncov] checking bindings #35·#36
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_5 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_6 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_7 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_8 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #35·#36 found unknown by wp
+[luncov] checking labels/bindings #7·#8
+[luncov] checking label #7
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #7 found 'unknown' by wp
+[luncov] checking label #8
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #8 found 'unknown' by wp
+[luncov] checking bindings #7·#8
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #7·#8 found unknown by wp
+[luncov] checking labels/bindings #39·#40
+[luncov] checking label #39
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #39 found 'unknown' by wp
+[luncov] checking label #40
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #40 found 'unknown' by wp
+[luncov] checking bindings #39·#40
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_5 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_6 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_7 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_8 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #39·#40 found unknown by wp
+[luncov] checking labels/bindings #41·#42
+[luncov] checking label #41
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #41 found 'unknown' by wp
+[luncov] checking label #42
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #42 found 'unknown' by wp
+[luncov] checking bindings #41·#42
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_5 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_6 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_7 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_8 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #41·#42 found unknown by wp
+[luncov] checking labels/bindings #37·#38
+[luncov] checking label #37
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #37 found 'unknown' by wp
+[luncov] checking label #38
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #38 found 'unknown' by wp
+[luncov] checking bindings #37·#38
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_5 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_6 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_7 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_8 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #37·#38 found unknown by wp
+[luncov] checking labels/bindings #33·#34
+[luncov] checking label #33
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #33 found 'unknown' by wp
+[luncov] checking label #34
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #34 found 'unknown' by wp
+[luncov] checking bindings #33·#34
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_5 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_6 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_7 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_8 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #33·#34 found unknown by wp
+[luncov] checking labels/bindings #5·#6
+[luncov] checking label #5
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #5 found 'unknown' by wp
+[luncov] checking label #6
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #6 found 'unknown' by wp
+[luncov] checking bindings #5·#6
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #5·#6 found unknown by wp
+[luncov] checking labels/bindings #47·#48
+[luncov] checking label #47
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #47 found 'unknown' by wp
+[luncov] checking label #48
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #48 found 'unknown' by wp
+[luncov] checking bindings #47·#48
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_5 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_6 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_7 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_8 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #47·#48 found unknown by wp
+[luncov] checking labels/bindings #53·#54
+[luncov] checking label #53
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #53 found 'unknown' by wp
+[luncov] checking label #54
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #54 found 'unknown' by wp
+[luncov] checking bindings #53·#54
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_5 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_6 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_7 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_8 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #53·#54 found unknown by wp
+[luncov] checking labels/bindings #61·#62
+[luncov] checking label #61
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #61 found 'unknown' by wp
+[luncov] checking label #62
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #62 found 'unknown' by wp
+[luncov] checking bindings #61·#62
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_5 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_6 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_7 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_8 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #61·#62 found unknown by wp
+[luncov] checking labels/bindings #27·#28
+[luncov] checking label #27
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #27 found 'unknown' by wp
+[luncov] checking label #28
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #28 found 'unknown' by wp
+[luncov] checking bindings #27·#28
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #27·#28 found unknown by wp
+[luncov] checking labels/bindings #59·#60
+[luncov] checking label #59
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #59 found 'unknown' by wp
+[luncov] checking label #60
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #60 found 'unknown' by wp
+[luncov] checking bindings #59·#60
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_5 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_6 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_7 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_8 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #59·#60 found unknown by wp
+[luncov] checking labels/bindings #55·#56
+[luncov] checking label #55
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #55 found 'unknown' by wp
+[luncov] checking label #56
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #56 found 'unknown' by wp
+[luncov] checking bindings #55·#56
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] Computing [4 goals...]
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_5 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_6 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_7 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_8 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #55·#56 found unknown by wp
+[luncov] checking labels/bindings #17·#18
+[luncov] checking label #17
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #17 found 'unknown' by wp
+[luncov] checking label #18
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #18 found 'unknown' by wp
+[luncov] checking bindings #17·#18
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #17·#18 found unknown by wp
+[luncov] checking labels/bindings #19·#20
+[luncov] checking label #19
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #19 found 'unknown' by wp
+[luncov] checking label #20
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #20 found 'unknown' by wp
+[luncov] checking bindings #19·#20
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #19·#20 found unknown by wp
+[luncov] checking labels/bindings #51·#52
+[luncov] checking label #51
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #51 found 'unknown' by wp
+[luncov] checking label #52
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #52 found 'unknown' by wp
+[luncov] checking bindings #51·#52
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_5 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_6 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_7 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_8 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #51·#52 found unknown by wp
+[luncov] checking labels/bindings #63·#64
+[luncov] checking label #63
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #63 found 'unknown' by wp
+[luncov] checking label #64
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #64 found 'unknown' by wp
+[luncov] checking bindings #63·#64
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_5 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_6 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_7 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_8 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #63·#64 found unknown by wp
+[luncov] checking labels/bindings #13·#14
+[luncov] checking label #13
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #13 found 'unknown' by wp
+[luncov] checking label #14
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #14 found 'unknown' by wp
+[luncov] checking bindings #13·#14
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #13·#14 found unknown by wp
+[luncov] checking labels/bindings #9·#10
+[luncov] checking label #9
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #9 found 'unknown' by wp
+[luncov] checking label #10
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #10 found 'unknown' by wp
+[luncov] checking bindings #9·#10
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #9·#10 found unknown by wp
+[luncov] checking labels/bindings #11·#12
+[luncov] checking label #11
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #11 found 'unknown' by wp
+[luncov] checking label #12
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #12 found 'unknown' by wp
+[luncov] checking bindings #11·#12
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #11·#12 found unknown by wp
+[luncov] checking labels/bindings #57·#58
+[luncov] checking label #57
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #57 found 'unknown' by wp
+[luncov] checking label #58
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #58 found 'unknown' by wp
+[luncov] checking bindings #57·#58
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_5 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_6 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_7 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_8 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #57·#58 found unknown by wp
+[luncov] checking labels/bindings #21·#22
+[luncov] checking label #21
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #21 found 'unknown' by wp
+[luncov] checking label #22
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #22 found 'unknown' by wp
+[luncov] checking bindings #21·#22
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #21·#22 found unknown by wp
+[luncov] checking labels/bindings #3·#4
+[luncov] checking label #3
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #3 found 'unknown' by wp
+[luncov] checking label #4
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #4 found 'unknown' by wp
+[luncov] checking bindings #3·#4
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #3·#4 found unknown by wp
+[luncov] checking labels/bindings #23·#24
+[luncov] checking label #23
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #23 found 'unknown' by wp
+[luncov] checking label #24
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #24 found 'unknown' by wp
+[luncov] checking bindings #23·#24
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #23·#24 found unknown by wp
+[luncov] checking labels/bindings #1·#2
+[luncov] checking label #1
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #1 found 'unknown' by wp
+[luncov] checking label #2
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #2 found 'unknown' by wp
+[luncov] checking bindings #1·#2
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #1·#2 found unknown by wp
+[luncov] checking labels/bindings #45·#46
+[luncov] checking label #45
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #45 found 'unknown' by wp
+[luncov] checking label #46
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #46 found 'unknown' by wp
+[luncov] checking bindings #45·#46
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_5 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_6 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_7 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_8 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #45·#46 found unknown by wp
+[luncov] checking labels/bindings #31·#32
+[luncov] checking label #31
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #31 found 'unknown' by wp
+[luncov] checking label #32
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #32 found 'unknown' by wp
+[luncov] checking bindings #31·#32
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #31·#32 found unknown by wp
+[luncov] checking labels/bindings #15·#16
+[luncov] checking label #15
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #15 found 'unknown' by wp
+[luncov] checking label #16
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #16 found 'unknown' by wp
+[luncov] checking bindings #15·#16
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #15·#16 found unknown by wp
+[luncov] checking labels/bindings #49·#50
+[luncov] checking label #49
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #49 found 'unknown' by wp
+[luncov] checking label #50
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #50 found 'unknown' by wp
+[luncov] checking bindings #49·#50
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_5 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_6 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_7 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_8 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #49·#50 found unknown by wp
+[luncov] checking labels/bindings #25·#26
+[luncov] checking label #25
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #25 found 'unknown' by wp
+[luncov] checking label #26
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_2 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] label #26 found 'unknown' by wp
+[luncov] checking bindings #25·#26
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_3 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[wp] 1 goal scheduled
+[wp] [Alt-Ergo 2.3.0] Goal typed_quadrant_check_Luncov_binds_wp_4 : Timeout
+[wp] Proved goals:    0 / 1
+  Alt-Ergo 2.3.0:    0  (interrupted: 1)
+[luncov] bindings #25·#26 found unknown by wp
+[luncov] WP-based detection done
+[luncov] label statistics
+  total number of labels       64
+  number of covered             0
+  number of uncoverable         0
+  number of unknown            64
+  coverage ratio             0.00% (covered over maybe coverable)
+[luncov] hyperlabel statistics
+  total number of hyperlabels       32
+  number of covered                  0
+  number of uncoverable              0
+  number of unknown                 32
+  coverage ratio                  0.00% (was 0.00%)
+[LUncov] updating hyperlabel file with coverage data 
+[luncov] hyperlabel data written to tests/luncov/result/quandrant_bindings_wp.hyperlabels
+[luncov] label data written to tests/luncov/result/quandrant_bindings_wp.labels
+[luncov] Execution time: (disabled)

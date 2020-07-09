@@ -1,22 +1,22 @@
 (**************************************************************************)
 (*                                                                        *)
-(*  This file is part of Frama-C.                                         *)
+(*  This file is part of LReplay.                                         *)
 (*                                                                        *)
-(*  Copyright (C) 2013-2018                                               *)
+(*  Copyright (C) 2007-2020                                               *)
 (*    CEA (Commissariat à l'énergie atomique et aux énergies              *)
 (*         alternatives)                                                  *)
 (*                                                                        *)
-(*  You may redistribute it and/or modify it under the terms of the GNU   *)
+(*  you can redistribute it and/or modify it under the terms of the GNU   *)
 (*  Lesser General Public License as published by the Free Software       *)
-(*  Foundation, version 3.                                                *)
+(*  Foundation, version 2.1.                                              *)
 (*                                                                        *)
-(*  It is distributed in the hope that it will be useful, but WITHOUT     *)
-(*  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY    *)
-(*  or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General      *)
-(*  Public License for more details.                                      *)
+(*  It is distributed in the hope that it will be useful,                 *)
+(*  but WITHOUT ANY WARRANTY; without even the implied warranty of        *)
+(*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *)
+(*  GNU Lesser General Public License for more details.                   *)
 (*                                                                        *)
-(*  See the GNU Lesser General Public License version 3 for more          *)
-(*  details (enclosed in the file LICENSE).                               *)
+(*  See the GNU Lesser General Public License version 2.1                 *)
+(*  for more details (enclosed in the file licenses/LGPLv2.1).            *)
 (*                                                                        *)
 (**************************************************************************)
 
@@ -44,21 +44,21 @@ let string_of_tuple (va,t,vb) =
   | (va,"!",vb) -> va ^ "!=" ^ vb
   | (va,t,b) -> raise (Invalid_argument "")
 
-let combine_cond l r = if (String.length r == 0) then l else (l ^ " && " ^ r)
+let combine_cond l r = if (String.length r = 0) then l else (l ^ " && " ^ r)
 
-let string_of_cond c = List.fold_right combine_cond (List.map string_of_tuple c) ""
+let string_of_cond c = if c = [] then " " else List.fold_right combine_cond (List.map string_of_tuple c) ""
 
 let string_of_node n =
   (if n.id >=0 then (string_of_int n.id) ^ ") " else "") ^
   (let st =
      (List.fold_right (fun nel s ->
-          "< "
+          "<"
           ^ (string_of_intlist "l" nel.labels)
           ^ (if (((List.length nel.labels) > 0) && ((List.length nel.sequences) > 0)) then "." else "")
           ^ (string_of_intlist "s" nel.sequences)
-          ^ " | ;"
+          ^ "|;"
           ^ (string_of_cond nel.condition)
-          ^ "; > + "
+          ^ ";> + "
           ^ s) n.ls "")
    in
    (String.sub st 0 ((String.length st) - 3)))

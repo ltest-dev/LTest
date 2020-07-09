@@ -58,7 +58,7 @@ type dnf_expression = dnf_minterm list
 
 module Dnfexpressionmap = Map.Make(struct
     type t = dnf_expression
-    let compare = Pervasives.compare
+    let compare = compare
   end)
 
 (** The algorithm for the optimization *)

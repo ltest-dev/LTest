@@ -1,3 +1,25 @@
+##########################################################################
+#                                                                        #
+#  This file is part of Frama-C.                                         #
+#                                                                        #
+#  Copyright (C) 2007-2020                                               #
+#    CEA (Commissariat à l'énergie atomique et aux énergies              #
+#         alternatives)                                                  #
+#                                                                        #
+#  you can redistribute it and/or modify it under the terms of the GNU   #
+#  Lesser General Public License as published by the Free Software       #
+#  Foundation, version 2.1.                                              #
+#                                                                        #
+#  It is distributed in the hope that it will be useful,                 #
+#  but WITHOUT ANY WARRANTY; without even the implied warranty of        #
+#  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         #
+#  GNU Lesser General Public License for more details.                   #
+#                                                                        #
+#  See the GNU Lesser General Public License version 2.1                 #
+#  for more details (enclosed in the file licenses/LGPLv2.1).            #
+#                                                                        #
+##########################################################################
+
 Frama-C/LTest: LUncov
 =====================
 *Infeasible test requirement detection*
@@ -13,16 +35,18 @@ LUncov is a Frama-C plugin.
 
 LUncov offers three ways to detect infeasible requirements:
 
-  - Value analysis: global analysis, done only once for every label
+  - Evolved Value Analysis: global analysis, done only once for every label
   - Weakest precondition: done once per label
   - Their combination
 
 Installation
 ------------
 
-LUncov requires Frama-C (Chlorine or latter) to be installed. A patch is available for Frama-C-Chlorine (Chlorine.patch).
+LUncov requires Frama-C 21.1 (Scandium) and OCaml 4.10.0 to be installed.
 To install it run the following two commands in LUncov's directory:
 
+    autoconf
+    ./configure
     make
     make install
 
@@ -34,7 +58,7 @@ Usage
 
 ### Three modes
 
-  - `-luncov-value` detects infeasible requirements by a
+  - `-luncov-eva` detects infeasible requirements by a
     global one-time analysis
 
   - `-luncov-wp` detects infeasible labels by a distinct
@@ -42,12 +66,13 @@ Usage
 
   - `-luncov-vwap` detects infeasible labels by combining
     a global analysis with a goal-oriented analysis
+    (Desactivated for now, WIP)
 
 ### Running the detection
 
 To start detecting infeasible (or uncoverable) labels simply run:
 
-    frama-c -luncov-value file.c -main fun
+    frama-c -luncov-eva file.c -main fun
 
 where `file.c` is the name of the file under test and `fun` is the name of the
 function under test.
@@ -55,13 +80,13 @@ function under test.
 *N.B.* LUncov automatically updates (or creates one if missing) the label
 coverage file (here `test.labels`).
 
-### Value analysis-based detection
+### EVA-based detection
 
 You may specify value analysis's parameters. See `frama-c -value-help` for
 details. It may be use to limit the verbosity of the analysis
 (`-value-verbose`), or to increase its precision, e.g.:
 
-    frama-c -luncov-value -value-verbose 0 -slevel 5 -val-ilevel 32 test.c
+    frama-c -luncov-eva -value-verbose 0 -slevel 5 -val-ilevel 32 test.c
 
 The label pruning will be based on a more precise value analysis, with:
 
@@ -143,23 +168,3 @@ Also many thanks to the rest of LTest's team:
   - Sébastien Bardin
   - Omar Chebaro
   - Nikolai Kosmatov
-
-License
--------
-
-This file is part of Frama-C
-
-Copyright (C) 2013-2018
-  CEA (Commissariat à l'énergie atomique et aux énergies alternatives)
-
-You may redistribute it and/or modify it under the terms of the GNU
-Lesser General Public License as published by the Free Software
-Foundation, version 3.
-
-It is distributed in the hope that it will be useful,
-but WITHOUT ANY WARRANTY; without even the implied warranty of
-MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-GNU Lesser General Public License for more details.
-
-See the GNU Lesser General Public License version 3
-for more details (enclosed in the file LICENSE).

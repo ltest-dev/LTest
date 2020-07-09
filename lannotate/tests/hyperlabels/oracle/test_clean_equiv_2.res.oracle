@@ -1,0 +1,9 @@
+[kernel] Parsing tests/hyperlabels/test_clean_equiv_2.c (with preprocessing)
+[lannot] apply annotations for AUC
+[lannot] write hyperlabel data (to tests/hyperlabels/result/test_clean_equiv_2_labels.hyperlabels)
+[lannot] Total number of sequences = 4
+[lannot] Total number of hyperlabels = 2
+[lannot] write modified C file (to tests/hyperlabels/result/test_clean_equiv_2_labels.c)
+[lannot] write label data (to tests/hyperlabels/result/test_clean_equiv_2_labels.labels)
+[lannot] 4 labels/sequences created
+[lannot] finished

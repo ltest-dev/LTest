@@ -1,5 +1,0 @@
-# id, status, tag, origin_loc, current_loc, emitter, exec_time
-1,unknown,CC,test_CC.c:7,,lannot,0.
-2,unknown,CC,test_CC.c:7,,lannot,0.
-3,unknown,CC,test_CC.c:7,,lannot,0.
-4,unknown,CC,test_CC.c:7,,lannot,0.

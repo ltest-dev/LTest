@@ -1,22 +1,22 @@
 (**************************************************************************)
 (*                                                                        *)
-(*  This file is part of Frama-C.                                         *)
+(*  This file is part of LReplay.                                         *)
 (*                                                                        *)
-(*  Copyright (C) 2013-2018                                               *)
+(*  Copyright (C) 2007-2020                                               *)
 (*    CEA (Commissariat à l'énergie atomique et aux énergies              *)
 (*         alternatives)                                                  *)
 (*                                                                        *)
-(*  You may redistribute it and/or modify it under the terms of the GNU   *)
+(*  you can redistribute it and/or modify it under the terms of the GNU   *)
 (*  Lesser General Public License as published by the Free Software       *)
-(*  Foundation, version 3.                                                *)
+(*  Foundation, version 2.1.                                              *)
 (*                                                                        *)
-(*  It is distributed in the hope that it will be useful, but WITHOUT     *)
-(*  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY    *)
-(*  or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General      *)
-(*  Public License for more details.                                      *)
+(*  It is distributed in the hope that it will be useful,                 *)
+(*  but WITHOUT ANY WARRANTY; without even the implied warranty of        *)
+(*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *)
+(*  GNU Lesser General Public License for more details.                   *)
 (*                                                                        *)
-(*  See the GNU Lesser General Public License version 3 for more          *)
-(*  details (enclosed in the file LICENSE).                               *)
+(*  See the GNU Lesser General Public License version 2.1                 *)
+(*  for more details (enclosed in the file licenses/LGPLv2.1).            *)
 (*                                                                        *)
 (**************************************************************************)
 
@@ -172,3 +172,17 @@ let explode s sep =
   if start < len then
     acc := String.sub s start (len-start) :: !acc;
   List.rev !acc
+
+
+let get_file_from_path path =
+  let splitted = String.split_on_char '/' path in
+  match  splitted with
+  | [] -> ""
+  | [s] -> s
+  | _ -> List.hd (List.rev splitted)
+
+
+let contains s1 s2 =
+  let re = Str.regexp_string s2 in
+  try ignore (Str.search_forward re s1 0); true
+  with Not_found -> false

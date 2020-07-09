@@ -2,21 +2,21 @@
 (*                                                                        *)
 (*  This file is part of Frama-C.                                         *)
 (*                                                                        *)
-(*  Copyright (C) 2013-2018                                               *)
+(*  Copyright (C) 2007-2020                                               *)
 (*    CEA (Commissariat à l'énergie atomique et aux énergies              *)
 (*         alternatives)                                                  *)
 (*                                                                        *)
-(*  You may redistribute it and/or modify it under the terms of the GNU   *)
+(*  you can redistribute it and/or modify it under the terms of the GNU   *)
 (*  Lesser General Public License as published by the Free Software       *)
-(*  Foundation, version 3.                                                *)
+(*  Foundation, version 2.1.                                              *)
 (*                                                                        *)
-(*  It is distributed in the hope that it will be useful, but WITHOUT     *)
-(*  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY    *)
-(*  or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General      *)
-(*  Public License for more details.                                      *)
+(*  It is distributed in the hope that it will be useful,                 *)
+(*  but WITHOUT ANY WARRANTY; without even the implied warranty of        *)
+(*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *)
+(*  GNU Lesser General Public License for more details.                   *)
 (*                                                                        *)
-(*  See the GNU Lesser General Public License version 3 for more          *)
-(*  details (enclosed in the file LICENSE).                               *)
+(*  See the GNU Lesser General Public License version 2.1                 *)
+(*  for more details (enclosed in the file licenses/LGPLv2.1).            *)
 (*                                                                        *)
 (**************************************************************************)
 
@@ -28,13 +28,13 @@ type strategy = ANNOT_PARAM | ANNOT_LABEL | ANNOT_FUN | ANNOT_ALL | ANNOT_NONE |
 
 (* For assume insertion *)
 let luncov_vwap_emitter = Emitter.create "LuncovVWAP"
-    [ Emitter.Code_annot ] ~correctness:[] ~tuning:[];;
+    [ Emitter.Code_annot ] ~correctness:[] ~tuning:[]
 
 let print_label_status f data =
-  let labels = Data.get_label_ids data in
+  let labels = Data_labels.get_label_ids data in
   List.iter (fun i ->
-      let l = Data.get_status data i in
-      Format.fprintf f "label #%d: %a" i Data.pp_status l
+      let l = Data_labels.get_status data i in
+      Format.fprintf f "label #%d: %a" i Data_labels.pp_status l
     ) labels
 
 let to_strategy s =
@@ -50,14 +50,16 @@ let to_strategy s =
 class annot_collector s id annots = object(self)
   inherit Visitor.frama_c_inplace
 
-  val label_kf = Instrument.get_kf id
+  val label_kf_id = Instrument_label.get_kf_id id
+  val mutable label_kf = Kernel_function.dummy ()
   val mutable in_label = false
 
   (* precond s \notin {ANNOT_NONE} *)
   method! vfunc fundec =
     let kf = Extlib.the self#current_kf in
-    if kf == label_kf then
+    if Kernel_function.get_id kf == label_kf_id then
       begin
+        label_kf <- kf;
         if s = ANNOT_PARAM || s = ANNOT_LABPARAM || s = ANNOT_ALL then
           self#collect_param_annotations fundec;
         if s = ANNOT_PARAM then
@@ -70,8 +72,8 @@ class annot_collector s id annots = object(self)
 
   (* precond s \notin {ANNOT_NONE, ANNOT_PARAM} *)
   method! vstmt_aux stmt =
-    match Instrument.is_stmt stmt with
-    | Some lblid when lblid = id ->
+    match Instrument.is_stmt_by_sid stmt.sid with
+    | [lblid] when lblid = id ->
       in_label <- true;
       self#collect_stmt_annotations stmt;
       Cil.ChangeDoChildrenPost (stmt, fun stmt -> in_label <- false; stmt)
@@ -103,7 +105,7 @@ let add_future_annot (kf,stmt,pred) =
   Options.debug ~level:2 "add value annotation `%a` at %a"
     Printer.pp_predicate_node pred.pred_content
     Printer.pp_location (Cil_datatype.Stmt.loc stmt);
-  let code_annotation = Logic_const.new_code_annotation (AAssert ([], pred)) in
+  let code_annotation = Logic_const.new_code_annotation (AAssert ([], Check, pred)) in
   Annotations.add_code_annot ~kf luncov_vwap_emitter stmt code_annotation;
   let props = Property.ip_of_code_annot kf stmt code_annotation in
   List.iter (fun prop -> Property_status.emit luncov_vwap_emitter ~hyps:[] prop Property_status.True) props
@@ -124,20 +126,20 @@ let wvap_property_checker strat valueprj =
   ("WVAP", check)
 
 
-let compute ?(force=false) data timeout =
+let compute ?(force=false) data hdata timeout =
   let strat = to_strategy (Options.Strategy.get()) in
 
   Options.feedback "start combined detection (aka VWAP)";
   Options.debug "%a" print_label_status data;
-  Value.compute ~force data;
+  EVA.compute ~force data hdata;
   Options.debug "%a" print_label_status data;
   let prj = Project.current () in
   begin
     match strat with
     | ANNOT_NONE ->
-      Wp_singlecore.compute ~force data timeout
+      Wp_singlecore.compute ~force data hdata timeout
     | _ ->
-      Wp_singlecore.compute ~force ~checker:(wvap_property_checker strat prj) data timeout
+      Wp_singlecore.compute ~force ~checker:(wvap_property_checker strat prj) data hdata timeout
   end;
 
   Options.debug "%a" print_label_status data;

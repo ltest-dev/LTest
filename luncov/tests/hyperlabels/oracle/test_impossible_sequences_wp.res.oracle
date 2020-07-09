@@ -1,0 +1,334 @@
+[kernel] Parsing tests/hyperlabels/test_impossible_sequences_wp.c (with preprocessing)
+[LUncov] hyperlabel file tests/hyperlabels/result/test_impossible_sequences_wp.hyperlabels found.
+[luncov] start weakest-precondition-based detection
+[luncov] checking sequence #20
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #20 found unknown by wp
+[luncov] checking sequence #2
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #2 found unknown by wp
+[luncov] checking sequence #29
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #29 found unknown by wp
+[luncov] checking sequence #35
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #35 found unknown by wp
+[luncov] checking sequence #7
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #7 found unknown by wp
+[luncov] checking sequence #39
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #39 found unknown by wp
+[luncov] checking sequence #10
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #10 found unknown by wp
+[luncov] checking sequence #37
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #37 found unknown by wp
+[luncov] checking sequence #33
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #33 found unknown by wp
+[luncov] checking sequence #5
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #5 found unknown by wp
+[luncov] checking sequence #28
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #28 found unknown by wp
+[luncov] checking sequence #22
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #22 found unknown by wp
+[luncov] checking sequence #34
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #34 found unknown by wp
+[luncov] checking sequence #38
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #38 found unknown by wp
+[luncov] checking sequence #27
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #27 found unknown by wp
+[luncov] checking sequence #6
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #6 found unknown by wp
+[luncov] checking sequence #17
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #17 found unknown by wp
+[luncov] checking sequence #32
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #32 found unknown by wp
+[luncov] checking sequence #19
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #19 found unknown by wp
+[luncov] checking sequence #13
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #13 found unknown by wp
+[luncov] checking sequence #9
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #9 found unknown by wp
+[luncov] checking sequence #11
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #11 found unknown by wp
+[luncov] checking sequence #26
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #26 found unknown by wp
+[luncov] checking sequence #36
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #36 found unknown by wp
+[luncov] checking sequence #21
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #21 found unknown by wp
+[luncov] checking sequence #24
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Qed] Goal typed_main_check_Luncov_WP : Valid
+[wp] Proved goals:    1 / 1
+  Qed:             1
+[luncov] sequence #24 found uncoverable by wp
+[luncov] checking sequence #16
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #16 found unknown by wp
+[luncov] checking sequence #3
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #3 found unknown by wp
+[luncov] checking sequence #23
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #23 found unknown by wp
+[luncov] checking sequence #1
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #1 found unknown by wp
+[luncov] checking sequence #8
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #8 found unknown by wp
+[luncov] checking sequence #12
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #12 found unknown by wp
+[luncov] checking sequence #31
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #31 found unknown by wp
+[luncov] checking sequence #15
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #15 found unknown by wp
+[luncov] checking sequence #14
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #14 found unknown by wp
+[luncov] checking sequence #30
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #30 found unknown by wp
+[luncov] checking sequence #4
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #4 found unknown by wp
+[luncov] checking sequence #25
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Qed] Goal typed_main_check_Luncov_WP : Valid
+[wp] Proved goals:    1 / 1
+  Qed:             1
+[luncov] sequence #25 found uncoverable by wp
+[luncov] checking sequence #18
+[rte] annotating function main
+[wp] tests/hyperlabels/test_impossible_sequences_wp.c:104: Warning: 
+  Missing assigns clause (assigns 'everything' instead)
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_main_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] sequence #18 found unknown by wp
+[luncov] WP-based detection done
+[luncov] number of uncoverable sequences 2
+[luncov] label statistics
+  total number of labels        0
+  number of covered             0
+  number of uncoverable         0
+  number of unknown             0
+[luncov] hyperlabel statistics
+  total number of hyperlabels       15
+  number of covered                  0
+  number of uncoverable              1 (+1)
+  number of unknown                 14 (-1)
+  coverage ratio                  0.00% (was 0.00%)
+[LUncov] updating hyperlabel file with coverage data 
+[luncov] hyperlabel data written to tests/hyperlabels/result/test_impossible_sequences_wp.hyperlabels
+[luncov] label data written to tests/hyperlabels/result/test_impossible_sequences_wp.labels
+[luncov] Execution time: (disabled)

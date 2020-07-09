@@ -1,0 +1,10 @@
+[kernel] Parsing tests/labels/quandrant_labels_vwap.c (with preprocessing)
+[LUncov] hyperlabel file tests/labels/quandrant_labels_vwap.hyperlabels NOT found. Hyp. coverage not measured 
+[luncov] Warning: WIP : TURNED OFF FOR NOW
+[luncov] label statistics
+  total number of labels        0
+  number of covered             0
+  number of uncoverable         0
+  number of unknown             0
+[luncov] label data written to tests/labels/result/quandrant_labels_vwap.labels
+[luncov] Execution time: (disabled)

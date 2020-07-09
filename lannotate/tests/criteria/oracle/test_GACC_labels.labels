@@ -1,7 +1,0 @@
-# id, status, tag, origin_loc, current_loc, emitter, exec_time
-1,unknown,GACC,test_GACC.c:7,,lannot,0.
-2,unknown,GACC,test_GACC.c:7,,lannot,0.
-3,unknown,GACC,test_GACC.c:7,,lannot,0.
-4,unknown,GACC,test_GACC.c:7,,lannot,0.
-5,unknown,GACC,test_GACC.c:7,,lannot,0.
-6,unknown,GACC,test_GACC.c:7,,lannot,0.

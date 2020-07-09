@@ -1,0 +1,9 @@
+#!/bin/sh -eu
+
+# This script must be in the same directory as the `frama-c` binary
+DIR="$( cd "$( dirname "$0" )" && pwd )"
+
+set -x
+"$DIR"/frama-c -luncov \
+  -lib-entry -context-width 128 -val-ilevel 64 -rte -slevel 50  \
+  -wp-model typed+cint+cfloat+var "$@"

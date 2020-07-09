@@ -2,7 +2,7 @@
 #                                                                        #
 #  This file is part of Frama-C.                                         #
 #                                                                        #
-#  Copyright (C) 2007-2018                                               #
+#  Copyright (C) 2007-2020                                               #
 #    CEA (Commissariat à l'énergie atomique et aux énergies              #
 #         alternatives)                                                  #
 #                                                                        #
@@ -34,8 +34,7 @@ m4_define([FRAMAC_SHARE],
                                      [m4_esyscmd(frama-c -print-path)])])
 
 m4_ifndef([FRAMAC_M4_MACROS], [m4_include(FRAMAC_SHARE/configure.ac)])
-
-check_plugin(lannotate,PLUGIN_RELATIVE_PATH(plugin_file),
+ check_plugin(lannotate,PLUGIN_RELATIVE_PATH(plugin_file),
              [support for lannotate plug-in],yes)
 
 #######################

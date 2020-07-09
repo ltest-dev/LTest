@@ -1,0 +1,7 @@
+# id, status, tag, origin_loc, current_loc, emitter, drivers, exec_time
+1, unknown, GACC, test_GACC.c:7, , LAnnot, , 0.
+2, unknown, GACC, test_GACC.c:7, , LAnnot, , 0.
+3, unknown, GACC, test_GACC.c:7, , LAnnot, , 0.
+4, unknown, GACC, test_GACC.c:7, , LAnnot, , 0.
+5, unknown, GACC, test_GACC.c:7, , LAnnot, , 0.
+6, unknown, GACC, test_GACC.c:7, , LAnnot, , 0.

@@ -2,27 +2,33 @@
 (*                                                                        *)
 (*  This file is part of Frama-C.                                         *)
 (*                                                                        *)
-(*  Copyright (C) 2013-2018                                               *)
+(*  Copyright (C) 2007-2020                                               *)
 (*    CEA (Commissariat à l'énergie atomique et aux énergies              *)
 (*         alternatives)                                                  *)
 (*                                                                        *)
-(*  You may redistribute it and/or modify it under the terms of the GNU   *)
+(*  you can redistribute it and/or modify it under the terms of the GNU   *)
 (*  Lesser General Public License as published by the Free Software       *)
-(*  Foundation, version 3.                                                *)
+(*  Foundation, version 2.1.                                              *)
 (*                                                                        *)
-(*  It is distributed in the hope that it will be useful, but WITHOUT     *)
-(*  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY    *)
-(*  or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General      *)
-(*  Public License for more details.                                      *)
+(*  It is distributed in the hope that it will be useful,                 *)
+(*  but WITHOUT ANY WARRANTY; without even the implied warranty of        *)
+(*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *)
+(*  GNU Lesser General Public License for more details.                   *)
 (*                                                                        *)
-(*  See the GNU Lesser General Public License version 3 for more          *)
-(*  details (enclosed in the file LICENSE).                               *)
+(*  See the GNU Lesser General Public License version 2.1                 *)
+(*  for more details (enclosed in the file licenses/LGPLv2.1).            *)
 (*                                                                        *)
 (**************************************************************************)
 
 
 (** Get the fake label function name *)
 val label_function_name : string
+(** Get the fake sequence function name *)
+val seq_cond_function_name: string
+(** Get the fake sequence condition function name *)
+val seq_function_name: string
+(** Get the fake binding function name for 1 binding *)
+val bind_function_name: string
 
 (** Extract string constant from Cil expression *)
 val cil_isString : Cil_types.exp -> string option
@@ -53,9 +59,9 @@ val with_project : ?selection:State_selection.t -> Project.t -> ('a -> 'b) -> 'a
 val copy_parameters : ?src:Project.t -> Project.t -> unit
 
 (** Create a predicate that represents the possible values
-    of the given expression at the given statement according to Value
+    of the given expression at the given statement according to EVA
 
-    requires: Value is computed first and exp is integral
+    requires: EVA is computed first and exp is integral
 *)
 val exp_to_pred: at:Cil_types.stmt -> Cil_types.exp
   -> Cil_types.predicate option
@@ -68,3 +74,8 @@ val collect_fun_param : Cil_types.fundec -> Cil_datatype.ExpStructEq.Set.t
 
 (** Return either or not the stmt is a label fun call **)
 val is_label_stmt : Cil_types.stmt -> int -> (bool * bool)
+
+val backup: string -> unit
+
+val replace_or_add_list: ('a, 'b list) Hashtbl.t -> 'a -> 'b -> unit
+val starting_time: float ref

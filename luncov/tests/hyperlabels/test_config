@@ -1,0 +1,6 @@
+LOG: @PTEST_NAME@.labels
+LOG: @PTEST_NAME@.hyperlabels
+EXEC: rm -f @PTEST_DIR@/result/@PTEST_NAME@.labels
+EXEC: rm -f @PTEST_DIR@/result/@PTEST_NAME@.hyperlabels
+EXEC: cp @PTEST_DIR@/$(sed 's/\(.*\)_.*/\1/' - <<< @PTEST_NAME@).hyperlabels @PTEST_DIR@/result/@PTEST_NAME@.hyperlabels
+OPT: -luncov-no-show-time -luncov-share ./share -luncov-labels @PTEST_DIR@/result/@PTEST_NAME@.labels -luncov-hyperlabels @PTEST_DIR@/result/@PTEST_NAME@.hyperlabels 

@@ -2,21 +2,21 @@
 (*                                                                        *)
 (*  This file is part of Frama-C.                                         *)
 (*                                                                        *)
-(*  Copyright (C) 2013-2018                                               *)
+(*  Copyright (C) 2007-2020                                               *)
 (*    CEA (Commissariat à l'énergie atomique et aux énergies              *)
 (*         alternatives)                                                  *)
 (*                                                                        *)
-(*  You may redistribute it and/or modify it under the terms of the GNU   *)
+(*  you can redistribute it and/or modify it under the terms of the GNU   *)
 (*  Lesser General Public License as published by the Free Software       *)
-(*  Foundation, version 3.                                                *)
+(*  Foundation, version 2.1.                                              *)
 (*                                                                        *)
-(*  It is distributed in the hope that it will be useful, but WITHOUT     *)
-(*  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY    *)
-(*  or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General      *)
-(*  Public License for more details.                                      *)
+(*  It is distributed in the hope that it will be useful,                 *)
+(*  but WITHOUT ANY WARRANTY; without even the implied warranty of        *)
+(*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *)
+(*  GNU Lesser General Public License for more details.                   *)
 (*                                                                        *)
-(*  See the GNU Lesser General Public License version 3 for more          *)
-(*  details (enclosed in the file LICENSE).                               *)
+(*  See the GNU Lesser General Public License version 2.1                 *)
+(*  for more details (enclosed in the file licenses/LGPLv2.1).            *)
 (*                                                                        *)
 (**************************************************************************)
 
@@ -34,7 +34,7 @@ type info = {
   li_kf : Cil_types.kernel_function;
 }
 
-module KFSet = Set.Make (struct type t = Cil_types.kernel_function let compare = compare end) 
+module KFSet = Set.Make (struct type t = Cil_types.kernel_function let compare = compare end)
 
 module LabelInfo = Datatype.Make (struct
     include Datatype.Serializable_undefined
@@ -66,36 +66,22 @@ module LabelInfos =
 
 
 class label_mapper h = object(self)
-  inherit Cil.nopCilVisitor
+  inherit Visitor.frama_c_inplace
 
-  val mutable current_kf = None
   val mutable opened_blocks = []
-  method! vglob g =
-    begin match g with
-      | GFun (fd, _) ->
-        (try
-           let kf = Globals.Functions.get fd.svar in
-           current_kf <- Some kf;
-         with Not_found ->
-           Kernel.fatal "No kernel function for function %a"
-             Cil_datatype.Varinfo.pretty fd.svar)
-      | _ ->
-        ()
-    end;
-    Cil.DoChildren
 
-  method! vstmt s =
+  method private get_parent_and_current =
+    match self#current_stmt, opened_blocks with
+    | Some stmt, block ::_ -> Some (block, stmt)
+    | _ -> None
+
+  method! vstmt_aux s =
     match s.skind with
     | Block _ ->
       opened_blocks <- s :: opened_blocks;
       Cil.ChangeDoChildrenPost (s, fun s -> opened_blocks <- List.tl opened_blocks; s)
     | _ ->
       Cil.DoChildren
-
-  method private get_parent_and_current =
-    match self#current_stmt, opened_blocks with
-    | Some stmt, block ::_ -> Some (block, stmt)
-    | _ -> None
 
   method! vinst i =
     begin
@@ -106,7 +92,7 @@ class label_mapper h = object(self)
           match Cil.isInteger idexp, cil_isString tagexp, self#get_parent_and_current  with
           | Some id, Some tag, Some (block_stmt,call_stmt) ->
             let id = Integer.to_int id in
-            let englobing_kf = Extlib.the current_kf in
+            let englobing_kf = Extlib.the self#current_kf in
             Datatype.Int.Hashtbl.add h id {
               li_loc=loc;
               li_tag=tag;
@@ -116,11 +102,11 @@ class label_mapper h = object(self)
               li_kf=englobing_kf;
             }
           | None,_,_ ->
-            Options.warning "instr: invalid label at line %d [id]" (fst loc).Lexing.pos_lnum
+            Options.warning "instr: invalid label at line %d [id]" (fst loc).Filepath.pos_lnum
           | _,None,_ ->
-            Options.warning "instr: invalid label at line %d [tag]" (fst loc).Lexing.pos_lnum
+            Options.warning "instr: invalid label at line %d [tag]" (fst loc).Filepath.pos_lnum
           | _,_,None ->
-            Options.warning "instr: invalid label at line %d [structure]" (fst loc).Lexing.pos_lnum
+            Options.warning "instr: invalid label at line %d [structure]" (fst loc).Filepath.pos_lnum
         end
       | _ -> ()
     end;
@@ -130,7 +116,7 @@ end
 let compute () : LabelInfos.data =
   let ast = Ast.get () in
   let h = H.create 97 in
-  Cil.visitCilFile (new label_mapper h) ast;
+  Visitor.visitFramacFileSameGlobals (new label_mapper h) ast;
   let blocks = H.create 97 in
   let calls = H.create 97 in
   let f id info =
@@ -201,15 +187,6 @@ let emitter = Emitter.create "Luncov_multicore" [ Emitter.Code_annot ] ~correctn
 class label_selector lblid info prj = object (self)
   inherit Visitor.frama_c_copy prj
 
-  val label_kf = get_kf lblid
-  val mutable into_lbl_fun = false
-
-  method! vfunc _ =
-    let kf = Extlib.the self#current_kf in
-    into_lbl_fun <- kf == label_kf;
-    Cil.DoChildren
-
-
   method! vinst i =
     begin
       match i with
@@ -236,29 +213,16 @@ class label_selector lblid info prj = object (self)
       | _ -> Cil.DoChildren
     end;
 
-(*  method! vstmt_aux stmt =
-    match is_stmt_by_sid stmt.sid with
-    | Some lblid' when lblid' <> lblid ->
-      stmt.skind <- Instr (Skip (Cil_datatype.Stmt.loc stmt));
-      Cil.SkipChildren
-    | _ ->
-      match is_annotable_stmt_by_sid stmt.sid with
-      | Some lblid' -> if lblid' = lblid then (
-        self#add_label_annot stmt;
-        Cil.JustCopy ) else Cil.DoChildren
-      | _ ->
-        Cil.DoChildren *)
-
   method private add_label_annot new_stmt =
     let lblinfo = get lblid in
     let cond = Cil.constFold true (Visitor.visitFramacExpr (self :> Visitor.frama_c_visitor) lblinfo.li_predicate) in
-    let cond = (Logic_utils.expr_to_term ~cast:false cond) in
+    let cond = (Logic_utils.expr_to_term ~coerce:true cond) in
     let rel = if !at then Cil_types.Req else Cil_types.Rneq in
     let assertion = Logic_const.prel (rel, cond, Cil.lzero ()) in (* NB negated*)
     let old_kf = Extlib.the self#current_kf in
-    let new_kf = Cil.get_kernel_function self#behavior old_kf in
+    let new_kf = Visitor_behavior.Get.kernel_function self#behavior old_kf in
     let queued_action () =
-      let code_annot = AAssert ([], assertion) in
+      let code_annot = AAssert ([], Check, assertion) in
       let code_annotation = Logic_const.new_code_annotation code_annot in
       Annotations.add_code_annot ~kf:new_kf emitter new_stmt code_annotation;
       info := Some (new_kf, new_stmt, code_annotation);
@@ -309,26 +273,26 @@ class label_collector prj = object (self)
           match self#current_stmt  with
           | Some stmt ->
             begin
-             match is_annotable_stmt_by_sid stmt.sid with
-               | Some lblid ->
-                 (* Saving info for writing label annotation *)
-                 Hashtbl.add lbl_stmt_map lblid stmt;
-                 let lblinfo = get lblid in
-                 let cond = Cil.constFold true (Visitor.visitFramacExpr (self :> Visitor.frama_c_visitor) lblinfo.li_predicate) in
-                 let cond = (Logic_utils.expr_to_term ~cast:false cond) in
-                 let rel = if !at then Cil_types.Req else Cil_types.Rneq in
-                 let assertion = Logic_const.prel (rel, cond, Cil.lzero ()) in
-                 Hashtbl.add lbl_cond_map lblid assertion;
-                 let old_kf = Extlib.the self#current_kf in
-                 let new_kf = Cil.get_kernel_function self#behavior old_kf in
-                 Hashtbl.add lbl_kf_map lblid new_kf;
-                 Hashtbl.add kf_lbl_map (get_kf_name new_kf) lblid;
-                 kfs := KFSet.add new_kf !kfs;
-                 (* Replacing label by SKIP *)
-                 let replace = (Skip (Cil_datatype.Stmt.loc stmt)) in
-                 Cil.ChangeTo [replace]
-               | _ -> Cil.DoChildren
-           end
+              match is_annotable_stmt_by_sid stmt.sid with
+              | Some lblid ->
+                (* Saving info for writing label annotation *)
+                Hashtbl.add lbl_stmt_map lblid stmt;
+                let lblinfo = get lblid in
+                let cond = Cil.constFold true (Visitor.visitFramacExpr (self :> Visitor.frama_c_visitor) lblinfo.li_predicate) in
+                let cond = (Logic_utils.expr_to_term ~coerce:true cond) in
+                let rel = if !at then Cil_types.Req else Cil_types.Rneq in
+                let assertion = Logic_const.prel (rel, cond, Cil.lzero ()) in
+                Hashtbl.add lbl_cond_map lblid assertion;
+                let old_kf = Extlib.the self#current_kf in
+                let new_kf = Visitor_behavior.Get.kernel_function self#behavior old_kf in
+                Hashtbl.add lbl_kf_map lblid new_kf;
+                Hashtbl.add kf_lbl_map (get_kf_name new_kf) lblid;
+                kfs := KFSet.add new_kf !kfs;
+                (* Replacing label by SKIP *)
+                let replace = (Skip (Cil_datatype.Stmt.loc stmt)) in
+                Cil.ChangeTo [replace]
+              | _ -> Cil.DoChildren
+            end
           | _ -> Cil.DoChildren
         end
       | _ -> Cil.DoChildren
@@ -353,42 +317,42 @@ let add_annotations_get_ips labels =
   Annotations.iter_all_code_annot (fun s e a -> Annotations.remove_code_annot e s a);
   let ips = Hashtbl.create (List.length labels) in
   List.iter (fun lblid ->
-  (* Adds new annotation *)
-  try (
-  let new_stmt = Hashtbl.find lbl_stmt_map lblid in
-  let assertion = Hashtbl.find lbl_cond_map lblid in
-  let new_kf = Hashtbl.find lbl_kf_map lblid in
-  let code_annot = AAssert ([], assertion) in
-  let code_annotation = Logic_const.new_code_annotation code_annot in
-  let emit = Emitter.create ("Label"^(string_of_int lblid)) [ Emitter.Code_annot ] ~correctness:[] ~tuning:[] in
-  Annotations.add_code_annot ~kf:new_kf emit new_stmt code_annotation;
-  (* Returns ip *)
-  Hashtbl.add ips lblid (Some (Property.ip_of_code_annot_single new_kf new_stmt code_annotation)))
-  with Not_found -> Hashtbl.add ips lblid None) labels;
+      (* Adds new annotation *)
+      try (
+        let new_stmt = Hashtbl.find lbl_stmt_map lblid in
+        let assertion = Hashtbl.find lbl_cond_map lblid in
+        let new_kf = Hashtbl.find lbl_kf_map lblid in
+        let code_annot = AAssert ([], Check, assertion) in
+        let code_annotation = Logic_const.new_code_annotation code_annot in
+        let emit = Emitter.create ("Label"^(string_of_int lblid)) [ Emitter.Code_annot ] ~correctness:[] ~tuning:[] in
+        Annotations.add_code_annot ~kf:new_kf emit new_stmt code_annotation;
+        (* Returns ip *)
+        Hashtbl.add ips lblid (Some (Property.ip_of_code_annot_single new_kf new_stmt code_annotation)))
+      with Not_found -> Hashtbl.add ips lblid None) labels;
   ips
 
 
 let add_annotation_get_ip lblid =
   (* Removes previous annotation
-  (match !previously_processed_label with
-  | Some l -> let new_stmt = Hashtbl.find lbl_stmt_map l in
+     (match !previously_processed_label with
+     | Some l -> let new_stmt = Hashtbl.find lbl_stmt_map l in
               let assertion = Hashtbl.find lbl_cond_map l in
               let new_kf = Hashtbl.find lbl_kf_map l in
-              let code_annot = AAssert ([], assertion) in
+              let code_annot = AAssert ([], Check, assertion) in
               let code_annotation = Logic_const.new_code_annotation code_annot in
               Annotations.remove_code_annot emitter ~kf:new_kf new_stmt code_annotation ;
               previously_processed_label := Some lblid
-  | None -> previously_processed_label := Some lblid); *)
+     | None -> previously_processed_label := Some lblid); *)
   Annotations.iter_all_code_annot (fun s e a -> Annotations.remove_code_annot e s a);
   (* Adds new annotation *)
   try (
-  let new_stmt = Hashtbl.find lbl_stmt_map lblid in
-  let assertion = Hashtbl.find lbl_cond_map lblid in
-  let new_kf = Hashtbl.find lbl_kf_map lblid in
-  let code_annot = AAssert ([], assertion) in
-  let code_annotation = Logic_const.new_code_annotation code_annot in
-  let emit = Emitter.create ("Label"^(string_of_int lblid)) [ Emitter.Code_annot ] ~correctness:[] ~tuning:[] in
-  Annotations.add_code_annot ~kf:new_kf emit new_stmt code_annotation;
-  (* Returns ip *)
-  Some (Property.ip_of_code_annot_single new_kf new_stmt code_annotation))
+    let new_stmt = Hashtbl.find lbl_stmt_map lblid in
+    let assertion = Hashtbl.find lbl_cond_map lblid in
+    let new_kf = Hashtbl.find lbl_kf_map lblid in
+    let code_annot = AAssert ([], Check, assertion) in
+    let code_annotation = Logic_const.new_code_annotation code_annot in
+    let emit = Emitter.create ("Label"^(string_of_int lblid)) [ Emitter.Code_annot ] ~correctness:[] ~tuning:[] in
+    Annotations.add_code_annot ~kf:new_kf emit new_stmt code_annotation;
+    (* Returns ip *)
+    Some (Property.ip_of_code_annot_single new_kf new_stmt code_annotation))
   with Not_found -> previously_processed_label := None; None

@@ -2,25 +2,24 @@
 (*                                                                        *)
 (*  This file is part of Frama-C.                                         *)
 (*                                                                        *)
-(*  Copyright (C) 2013-2018                                               *)
+(*  Copyright (C) 2007-2020                                               *)
 (*    CEA (Commissariat à l'énergie atomique et aux énergies              *)
 (*         alternatives)                                                  *)
 (*                                                                        *)
-(*  You may redistribute it and/or modify it under the terms of the GNU   *)
+(*  you can redistribute it and/or modify it under the terms of the GNU   *)
 (*  Lesser General Public License as published by the Free Software       *)
-(*  Foundation, version 3.                                                *)
+(*  Foundation, version 2.1.                                              *)
 (*                                                                        *)
-(*  It is distributed in the hope that it will be useful, but WITHOUT     *)
-(*  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY    *)
-(*  or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General      *)
-(*  Public License for more details.                                      *)
+(*  It is distributed in the hope that it will be useful,                 *)
+(*  but WITHOUT ANY WARRANTY; without even the implied warranty of        *)
+(*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *)
+(*  GNU Lesser General Public License for more details.                   *)
 (*                                                                        *)
-(*  See the GNU Lesser General Public License version 3 for more          *)
-(*  details (enclosed in the file LICENSE).                               *)
+(*  See the GNU Lesser General Public License version 2.1                 *)
+(*  for more details (enclosed in the file licenses/LGPLv2.1).            *)
 (*                                                                        *)
 (**************************************************************************)
 
-open Lexing
 open Cil_types
 
 let print_std_includes fmt globs =
@@ -31,9 +30,7 @@ let print_std_includes fmt globs =
     in
     let add_file acc g =
       let attrs = Cil_datatype.Global.attr g in
-      match Cil.findAttribute "fc_stdlib" attrs with
-      | [ arg ] -> extract_file acc arg
-      | _ -> acc
+      List.fold_left extract_file acc (Cil.findAttribute "fc_stdlib" attrs)
     in
     let includes = List.fold_left add_file Datatype.String.Set.empty globs in
     let print_one_include s = Format.fprintf fmt "#include \"%s\"@." s in
@@ -78,7 +75,9 @@ let all_stmts = ref ([]:stmt list)
 let get_stmt_loc = Cil_datatype.Stmt.loc
 
 (* val get_stmt_loc_int: stmt -> int *)
-let get_stmt_loc_int s = (fst (get_stmt_loc s)).pos_lnum
+let get_stmt_loc_int s = (fst (get_stmt_loc s)).Filepath.pos_lnum
+
+let print_file_path origine_loc = (Filepath.Normalized.to_pretty_string ((fst origine_loc).Filepath.pos_path))
 
 (* val same_line: stmt -> stmt -> bool *)
 let same_line s1 s2 = (get_stmt_loc_int s1) = (get_stmt_loc_int s2)
@@ -185,3 +184,5 @@ let rev_sign_combine ~(pos: 'a -> 'b) ~(neg : 'a -> 'b) : 'a list -> 'b list lis
 
 let sign_combine ~pos ~neg l =
   List.rev (rev_sign_combine pos neg l)
+
+let concat l = List.fold_left (fun acc el -> acc @ el) [] l

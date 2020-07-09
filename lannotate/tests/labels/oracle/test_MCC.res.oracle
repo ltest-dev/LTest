@@ -1,0 +1,6 @@
+[kernel] Parsing tests/labels/test_MCC.c (with preprocessing)
+[lannot] apply annotations for MCC
+[lannot] write modified C file (to tests/labels/result/test_MCC_labels.c)
+[lannot] write label data (to tests/labels/result/test_MCC_labels.labels)
+[lannot] 4 labels/sequences created
+[lannot] finished

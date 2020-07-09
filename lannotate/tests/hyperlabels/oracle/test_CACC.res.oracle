@@ -1,0 +1,7 @@
+[kernel] Parsing tests/hyperlabels/test_CACC.c (with preprocessing)
+[lannot] apply annotations for CACC
+[lannot] write hyperlabel data (to tests/hyperlabels/result/test_CACC_labels.hyperlabels)
+[lannot] write modified C file (to tests/hyperlabels/result/test_CACC_labels.c)
+[lannot] write label data (to tests/hyperlabels/result/test_CACC_labels.labels)
+[lannot] 8 labels/sequences created
+[lannot] finished

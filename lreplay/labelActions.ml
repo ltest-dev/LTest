@@ -1,22 +1,22 @@
 (**************************************************************************)
 (*                                                                        *)
-(*  This file is part of Frama-C.                                         *)
+(*  This file is part of LReplay.                                         *)
 (*                                                                        *)
-(*  Copyright (C) 2013-2018                                               *)
+(*  Copyright (C) 2007-2020                                               *)
 (*    CEA (Commissariat à l'énergie atomique et aux énergies              *)
 (*         alternatives)                                                  *)
 (*                                                                        *)
-(*  You may redistribute it and/or modify it under the terms of the GNU   *)
+(*  you can redistribute it and/or modify it under the terms of the GNU   *)
 (*  Lesser General Public License as published by the Free Software       *)
-(*  Foundation, version 3.                                                *)
+(*  Foundation, version 2.1.                                              *)
 (*                                                                        *)
-(*  It is distributed in the hope that it will be useful, but WITHOUT     *)
-(*  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY    *)
-(*  or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General      *)
-(*  Public License for more details.                                      *)
+(*  It is distributed in the hope that it will be useful,                 *)
+(*  but WITHOUT ANY WARRANTY; without even the implied warranty of        *)
+(*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *)
+(*  GNU Lesser General Public License for more details.                   *)
 (*                                                                        *)
-(*  See the GNU Lesser General Public License version 3 for more          *)
-(*  details (enclosed in the file LICENSE).                               *)
+(*  See the GNU Lesser General Public License version 2.1                 *)
+(*  for more details (enclosed in the file licenses/LGPLv2.1).            *)
 (*                                                                        *)
 (**************************************************************************)
 
@@ -57,8 +57,7 @@ let check labelsfile report =
   if !errors > 0 then
     Format.eprintf "[lreplay] found %d error(s) in %s@." !errors labelsfile
   else
-    Format.eprintf "[lreplay] found no error in %s@." labelsfile;
-  labelstable
+    Format.eprintf "[lreplay] found no error in %s@." labelsfile
 
 
 let update labelsfile report =
@@ -79,19 +78,22 @@ let update labelsfile report =
           incr errors;
           Format.eprintf "[lreplay error] label #%d was incorrectly reported as uncoverable in %s\n  covered in %s@." id labelsfile row.driver;
           Data.Covered
-
         | true, _ -> Data.Covered
         | _, _ -> status
       in
       if status <> nstatus then begin
-        incr changes;
-        Data.update labelstable id ~tag:row.tag ~current_loc:row.driver nstatus
-      end
+          incr changes;
+          Data.update labelstable id ~tag:row.tag ~current_loc:row.loc nstatus
+        end
+      else if nstatus = Covered then begin
+        Data.check_tag labelstable id row.tag;
+        incr changes
+        end;
     with Not_found ->
       incr errors;
       incr changes;
       Format.eprintf "[lreplay error] label #%d was missing in %s@." id labelsfile;
-      Data.add labelstable id ~tag:row.tag ~current_loc:row.driver
+      Data.add labelstable id ~tag:row.tag ~current_loc:row.loc
         (if row.covered then Data.Covered else Data.Unknown)
   in
   Hashtbl.iter f report;
@@ -172,8 +174,8 @@ s/\"$//
 s/\"\\? *, *\"\\?/,/g
 "
 
-let init labelsfile source ~force =
-  if not force && Sys.file_exists labelsfile then
+let init labelsfile source =
+  if not Options.force && Sys.file_exists labelsfile then
     Format.eprintf "[lreplay error] %s already exists (use -force to overwrite)@." labelsfile
   else
   let input = Unix.open_process_in (String.concat " " [

@@ -1,0 +1,402 @@
+[kernel] Parsing tests/labels/quandrant_labels_wp.c (with preprocessing)
+[LUncov] hyperlabel file tests/labels/quandrant_labels_wp.hyperlabels NOT found. Hyp. coverage not measured 
+[luncov] start weakest-precondition-based detection
+[luncov] checking label #20
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #20 found 'unknown' by wp
+[luncov] checking label #2
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #2 found 'unknown' by wp
+[luncov] checking label #43
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #43 found 'unknown' by wp
+[luncov] checking label #29
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Qed] Goal typed_quadrant_check_Luncov_WP : Valid
+[wp] Proved goals:    1 / 1
+  Qed:             1
+[luncov] label #29 found 'uncoverable' by wp
+[luncov] checking label #35
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #35 found 'unknown' by wp
+[luncov] checking label #7
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #7 found 'unknown' by wp
+[luncov] checking label #39
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #39 found 'unknown' by wp
+[luncov] checking label #46
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #46 found 'unknown' by wp
+[luncov] checking label #42
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #42 found 'unknown' by wp
+[luncov] checking label #10
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #10 found 'unknown' by wp
+[luncov] checking label #41
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #41 found 'unknown' by wp
+[luncov] checking label #64
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Qed] Goal typed_quadrant_check_Luncov_WP : Valid
+[wp] Proved goals:    1 / 1
+  Qed:             1
+[luncov] label #64 found 'uncoverable' by wp
+[luncov] checking label #37
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #37 found 'unknown' by wp
+[luncov] checking label #33
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #33 found 'unknown' by wp
+[luncov] checking label #5
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #5 found 'unknown' by wp
+[luncov] checking label #44
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #44 found 'unknown' by wp
+[luncov] checking label #47
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #47 found 'unknown' by wp
+[luncov] checking label #53
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #53 found 'unknown' by wp
+[luncov] checking label #28
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #28 found 'unknown' by wp
+[luncov] checking label #22
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #22 found 'unknown' by wp
+[luncov] checking label #48
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Qed] Goal typed_quadrant_check_Luncov_WP : Valid
+[wp] Proved goals:    1 / 1
+  Qed:             1
+[luncov] label #48 found 'uncoverable' by wp
+[luncov] checking label #34
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #34 found 'unknown' by wp
+[luncov] checking label #58
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #58 found 'unknown' by wp
+[luncov] checking label #61
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Qed] Goal typed_quadrant_check_Luncov_WP : Valid
+[wp] Proved goals:    1 / 1
+  Qed:             1
+[luncov] label #61 found 'uncoverable' by wp
+[luncov] checking label #38
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #38 found 'unknown' by wp
+[luncov] checking label #27
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #27 found 'unknown' by wp
+[luncov] checking label #6
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #6 found 'unknown' by wp
+[luncov] checking label #59
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #59 found 'unknown' by wp
+[luncov] checking label #60
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #60 found 'unknown' by wp
+[luncov] checking label #55
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #55 found 'unknown' by wp
+[luncov] checking label #40
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #40 found 'unknown' by wp
+[luncov] checking label #17
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #17 found 'unknown' by wp
+[luncov] checking label #32
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #32 found 'unknown' by wp
+[luncov] checking label #19
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #19 found 'unknown' by wp
+[luncov] checking label #51
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #51 found 'unknown' by wp
+[luncov] checking label #63
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #63 found 'unknown' by wp
+[luncov] checking label #13
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #13 found 'unknown' by wp
+[luncov] checking label #9
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #9 found 'unknown' by wp
+[luncov] checking label #11
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #11 found 'unknown' by wp
+[luncov] checking label #26
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #26 found 'unknown' by wp
+[luncov] checking label #57
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #57 found 'unknown' by wp
+[luncov] checking label #36
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Qed] Goal typed_quadrant_check_Luncov_WP : Valid
+[wp] Proved goals:    1 / 1
+  Qed:             1
+[luncov] label #36 found 'uncoverable' by wp
+[luncov] checking label #21
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #21 found 'unknown' by wp
+[luncov] checking label #24
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #24 found 'unknown' by wp
+[luncov] checking label #16
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #16 found 'unknown' by wp
+[luncov] checking label #3
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #3 found 'unknown' by wp
+[luncov] checking label #23
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #23 found 'unknown' by wp
+[luncov] checking label #1
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #1 found 'unknown' by wp
+[luncov] checking label #54
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #54 found 'unknown' by wp
+[luncov] checking label #45
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #45 found 'unknown' by wp
+[luncov] checking label #8
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #8 found 'unknown' by wp
+[luncov] checking label #12
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #12 found 'unknown' by wp
+[luncov] checking label #31
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #31 found 'unknown' by wp
+[luncov] checking label #56
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #56 found 'unknown' by wp
+[luncov] checking label #15
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #15 found 'unknown' by wp
+[luncov] checking label #14
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #14 found 'unknown' by wp
+[luncov] checking label #62
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #62 found 'unknown' by wp
+[luncov] checking label #30
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #30 found 'unknown' by wp
+[luncov] checking label #4
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #4 found 'unknown' by wp
+[luncov] checking label #52
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Qed] Goal typed_quadrant_check_Luncov_WP : Valid
+[wp] Proved goals:    1 / 1
+  Qed:             1
+[luncov] label #52 found 'uncoverable' by wp
+[luncov] checking label #49
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #49 found 'unknown' by wp
+[luncov] checking label #25
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #25 found 'unknown' by wp
+[luncov] checking label #50
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #50 found 'unknown' by wp
+[luncov] checking label #18
+[wp] Warning: Missing RTE guards
+[wp] 1 goal scheduled
+[wp] [Failed] Goal typed_quadrant_check_Luncov_WP
+[wp] Proved goals:    0 / 1
+[luncov] label #18 found 'unknown' by wp
+[luncov] WP-based detection done
+[luncov] label statistics
+  total number of labels       64
+  number of covered             0
+  number of uncoverable         6
+  number of unknown            58
+  coverage ratio             0.00% (covered over maybe coverable)
+[luncov] label data written to tests/labels/result/quandrant_labels_wp.labels
+[luncov] Execution time: (disabled)

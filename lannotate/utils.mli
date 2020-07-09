@@ -2,21 +2,21 @@
 (*                                                                        *)
 (*  This file is part of Frama-C.                                         *)
 (*                                                                        *)
-(*  Copyright (C) 2013-2018                                               *)
+(*  Copyright (C) 2007-2020                                               *)
 (*    CEA (Commissariat à l'énergie atomique et aux énergies              *)
 (*         alternatives)                                                  *)
 (*                                                                        *)
-(*  You may redistribute it and/or modify it under the terms of the GNU   *)
+(*  you can redistribute it and/or modify it under the terms of the GNU   *)
 (*  Lesser General Public License as published by the Free Software       *)
-(*  Foundation, version 3.                                                *)
+(*  Foundation, version 2.1.                                              *)
 (*                                                                        *)
-(*  It is distributed in the hope that it will be useful, but WITHOUT     *)
-(*  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY    *)
-(*  or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General      *)
-(*  Public License for more details.                                      *)
+(*  It is distributed in the hope that it will be useful,                 *)
+(*  but WITHOUT ANY WARRANTY; without even the implied warranty of        *)
+(*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *)
+(*  GNU Lesser General Public License for more details.                   *)
 (*                                                                        *)
-(*  See the GNU Lesser General Public License version 3 for more          *)
-(*  details (enclosed in the file LICENSE).                               *)
+(*  See the GNU Lesser General Public License version 2.1                 *)
+(*  for more details (enclosed in the file licenses/LGPLv2.1).            *)
 (*                                                                        *)
 (**************************************************************************)
 
@@ -29,6 +29,7 @@ val extract_global_vars : file -> varinfo list
 val all_stmts : stmt list ref
 val get_stmt_loc : stmt -> location
 val get_stmt_loc_int : stmt -> int
+val print_file_path : Cil_types.location -> string
 val same_line : stmt -> stmt -> bool
 val mk_call :
   ?loc:location -> ?result:lval -> string -> exp list -> stmt
@@ -84,3 +85,5 @@ val sign_combine : pos:('a -> 'b) -> neg:('a -> 'b) -> 'a list -> 'b list list
    Returns the combination in the opposite order of {!sign_combine}.
 *)
 val rev_sign_combine : pos:('a -> 'b) -> neg:('a -> 'b) -> 'a list -> 'b list list
+
+val concat: 'a list list -> 'a list

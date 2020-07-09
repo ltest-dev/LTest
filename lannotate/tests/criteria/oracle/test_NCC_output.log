@@ -1,6 +1,0 @@
-[kernel] Parsing tests/criteria/test_NCC.c (with preprocessing)
-[kernel] Parsing tests/criteria/test_NCC.c (with preprocessing)
-[lannot] apply annotations for NCC
-[lannot] write modified C file (to tests/criteria/result/test_NCC_labels.c)
-[lannot] write label data (to tests/criteria/result/test_NCC_labels.labels)
-[lannot] finished

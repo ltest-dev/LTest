@@ -1,0 +1,6 @@
+[kernel] Parsing tests/labels/test_FC.c (with preprocessing)
+[lannot] apply annotations for FC
+[lannot] write modified C file (to tests/labels/result/test_FC_labels.c)
+[lannot] write label data (to tests/labels/result/test_FC_labels.labels)
+[lannot] 1 labels/sequences created
+[lannot] finished

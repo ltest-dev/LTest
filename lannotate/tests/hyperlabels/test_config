@@ -1,0 +1,4 @@
+LOG: @PTEST_NAME@_labels.c
+LOG: @PTEST_NAME@_labels.labels
+LOG: @PTEST_NAME@_labels.hyperlabels
+OPT: -lannot-o @PTEST_DIR@/result/@PTEST_NAME@_labels.c

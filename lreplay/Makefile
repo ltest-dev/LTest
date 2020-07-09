@@ -68,7 +68,7 @@
 #
 # The Caml sources (including camlyacc and camllex source files)
 
-SOURCES = hhelpers.ml lexer.mll parser.mly csv.ml strUtils.ml foreignCodeUtils.ml foreignCode.ml coverage.ml data.ml labelActions.ml hyperlabels.ml lreplay.ml
+SOURCES = options.ml hhelpers.ml lexer.mll parser.mly csv.ml strUtils.ml foreignCodeUtils.ml foreignCode.ml coverage.ml data.ml labelActions.ml hyperlabels.ml lreplay.ml
 
 # The executable file to generate (default a.out under Unix)
 
@@ -143,13 +143,13 @@ $(EXEC).opt: $(OPTOBJS)
 	$(CAMLOPT) -o $(EXEC).opt $(LIBS:.cma=.cmxa) $(OPTOBJS)
 
 .SUFFIXES:
-.SUFFIXES: .ml .mli .cmo .cmi .cmx .mll .mly
+.SUFFIXES: .ml .mli .cmo .cmi .cmx .mll .mly .cmt
 
 .ml.cmo:
-	$(CAMLC) -c $<
+	$(CAMLC) -bin-annot -c $<
 
 .mli.cmi:
-	$(CAMLC) -c $<
+	$(CAMLC) -bin-annot -c $<
 
 .ml.cmx:
 	$(CAMLOPT) -c $<
@@ -183,7 +183,7 @@ $(EXEC).opt: $(OPTOBJS)
 	$(CAMLYACC) $<
 
 foreignCode.ml: uthash.h utlist.h runtime.h runtime.c detection.h
-	@(\
+	(\
           echo -n 'let uthash_h = ForeignCodeUtils.lazy_create_file "'; cat uthash.h | sed 's/["\\]/\\&/g'; echo '" "lreplay_uthash" ".h";;'; \
           echo -n 'let utlist_h = ForeignCodeUtils.lazy_create_file "'; cat utlist.h | sed 's/["\\]/\\&/g'; echo '" "lreplay_utlist" ".h";;'; \
 	  echo -n 'let runtime_h = ForeignCodeUtils.lazy_create_file "'; cat runtime.h | sed 's/["\\]/\\&/g'; echo '" "lreplay_runtime" ".h";;'; \
@@ -193,7 +193,7 @@ foreignCode.ml: uthash.h utlist.h runtime.h runtime.c detection.h
 	@$(CAMLDEP) *.ml > .depend
 
 clean:
-	rm -f *.cm[iox] *.o foreignCode.ml parser.ml parser.mli lexer.ml *~ .*~ #*#
+	rm -f *.cm[ioxt] *cmti *.o foreignCode.ml parser.ml parser.mli lexer.ml *~ .*~ #*#
 	rm -f $(EXEC)
 	rm -f $(EXEC).opt
 

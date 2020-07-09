@@ -2,21 +2,21 @@
 (*                                                                        *)
 (*  This file is part of Frama-C.                                         *)
 (*                                                                        *)
-(*  Copyright (C) 2013-2018                                               *)
+(*  Copyright (C) 2007-2020                                               *)
 (*    CEA (Commissariat à l'énergie atomique et aux énergies              *)
 (*         alternatives)                                                  *)
 (*                                                                        *)
-(*  You may redistribute it and/or modify it under the terms of the GNU   *)
+(*  you can redistribute it and/or modify it under the terms of the GNU   *)
 (*  Lesser General Public License as published by the Free Software       *)
-(*  Foundation, version 3.                                                *)
+(*  Foundation, version 2.1.                                              *)
 (*                                                                        *)
-(*  It is distributed in the hope that it will be useful, but WITHOUT     *)
-(*  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY    *)
-(*  or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General      *)
-(*  Public License for more details.                                      *)
+(*  It is distributed in the hope that it will be useful,                 *)
+(*  but WITHOUT ANY WARRANTY; without even the implied warranty of        *)
+(*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *)
+(*  GNU Lesser General Public License for more details.                   *)
 (*                                                                        *)
-(*  See the GNU Lesser General Public License version 3 for more          *)
-(*  details (enclosed in the file LICENSE).                               *)
+(*  See the GNU Lesser General Public License version 2.1                 *)
+(*  for more details (enclosed in the file licenses/LGPLv2.1).            *)
 (*                                                                        *)
 (**************************************************************************)
 
@@ -82,8 +82,8 @@ let split_list_size l n =
   else [l] (* Splits a list l in list chunks of size n *)
 
 let no_output () =
-    let devnull = descr_of_out_channel (open_out "/dev/null") in
-    dup2 devnull stdout
+  let devnull = descr_of_out_channel (open_out "/dev/null") in
+  dup2 devnull stdout
 
 (* The task of one worker process, with result marshalling of the results to the main process *)
 let wp_call kf labels channel =
@@ -98,7 +98,7 @@ let wp_call kf labels channel =
     Wp_parameters.Clean.set false;
     Wp_parameters.Bits.set false
   end;
-  Wp_parameters.Assert_check_only.set true;
+
   List.iter (fun s -> Wp_parameters.Model.add s) ["typed";"int";"float";"var"];
   let flag = ref true in
   begin
@@ -203,10 +203,19 @@ and get_results fds chs cnt force checker_name data = match (Unix.select fds [] 
       let channel = Hashtbl.find chs fd in
       let eof = (input_line channel = "true") in
       let lblid = int_of_string (input_line channel) in
-      let status = if (input_line channel = "valid") then Data.Uncoverable else Data.Unknown in
+      let status = if (input_line channel = "valid") then Data_labels.Uncoverable else Data_labels.Unknown in
       ignore(Sys.command "pkill --signal 9 --parent 1 --full alt-ergo"); (* Dirty but alt-ergo can create polluting subprocesses orphaned when killing wp because of time-out.  *)
-      if eof then begin close_in channel; Options.feedback "Exiting supervisor process with pid %d" lblid; ignore(Unix.wait()); fd::acc end
-      else begin Data.update data ~force ~status ~emitter:checker_name lblid; acc end
+      if eof then
+        begin
+          close_in channel;
+          Options.feedback "Exiting supervisor process with pid %d" lblid;
+          ignore(Unix.wait());
+          fd::acc
+        end
+      else begin
+        Data_labels.update data ~force ~status ~emitter:checker_name lblid;
+        acc
+      end
     ) in
     let killed_children = (List.fold_left process [] fdl) in
     let nb_killed_children = cnt + (List.length killed_children) in

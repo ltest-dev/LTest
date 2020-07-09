@@ -1,0 +1,5 @@
+# id, status, tag, origin_loc, current_loc, emitter, drivers, exec_time
+1, unknown, FCC, test_FCC.c:10, , LAnnot, , 0.
+2, unknown, FCC, test_FCC.c:14, , LAnnot, , 0.
+3, unknown, FCC, test_FCC.c:14, , LAnnot, , 0.
+4, unknown, FCC, test_FCC.c:14, , LAnnot, , 0.

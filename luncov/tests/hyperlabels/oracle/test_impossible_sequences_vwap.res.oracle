@@ -1,0 +1,18 @@
+[kernel] Parsing tests/hyperlabels/test_impossible_sequences_vwap.c (with preprocessing)
+[LUncov] hyperlabel file tests/hyperlabels/result/test_impossible_sequences_vwap.hyperlabels found.
+[luncov] Warning: WIP : TURNED OFF FOR NOW
+[luncov] label statistics
+  total number of labels        0
+  number of covered             0
+  number of uncoverable         0
+  number of unknown             0
+[luncov] hyperlabel statistics
+  total number of hyperlabels       15
+  number of covered                  0
+  number of uncoverable              0
+  number of unknown                 15
+  coverage ratio                  0.00% (was 0.00%)
+[LUncov] updating hyperlabel file with coverage data 
+[luncov] hyperlabel data written to tests/hyperlabels/result/test_impossible_sequences_vwap.hyperlabels
+[luncov] label data written to tests/hyperlabels/result/test_impossible_sequences_vwap.labels
+[luncov] Execution time: (disabled)

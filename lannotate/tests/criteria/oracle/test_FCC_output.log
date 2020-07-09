@@ -1,7 +1,0 @@
-[kernel] Parsing tests/criteria/test_FCC.c (with preprocessing)
-[kernel] Parsing tests/criteria/test_FCC.c (with preprocessing)
-[lannot] apply annotations for FCC
-[lannot] write hyperlabel data (to tests/criteria/result/test_FCC_labels.hyperlabels)
-[lannot] write modified C file (to tests/criteria/result/test_FCC_labels.c)
-[lannot] write label data (to tests/criteria/result/test_FCC_labels.labels)
-[lannot] finished

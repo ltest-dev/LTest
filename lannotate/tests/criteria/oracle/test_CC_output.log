@@ -1,6 +1,0 @@
-[kernel] Parsing tests/criteria/test_CC.c (with preprocessing)
-[kernel] Parsing tests/criteria/test_CC.c (with preprocessing)
-[lannot] apply annotations for CC
-[lannot] write modified C file (to tests/criteria/result/test_CC_labels.c)
-[lannot] write label data (to tests/criteria/result/test_CC_labels.labels)
-[lannot] finished

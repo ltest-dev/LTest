@@ -1,0 +1,6 @@
+[kernel] Parsing tests/labels/test_STMT.c (with preprocessing)
+[lannot] apply annotations for STMT
+[lannot] write modified C file (to tests/labels/result/test_STMT_labels.c)
+[lannot] write label data (to tests/labels/result/test_STMT_labels.labels)
+[lannot] 22 labels/sequences created
+[lannot] finished

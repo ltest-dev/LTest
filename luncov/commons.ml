@@ -2,21 +2,21 @@
 (*                                                                        *)
 (*  This file is part of Frama-C.                                         *)
 (*                                                                        *)
-(*  Copyright (C) 2013-2018                                               *)
+(*  Copyright (C) 2007-2020                                               *)
 (*    CEA (Commissariat à l'énergie atomique et aux énergies              *)
 (*         alternatives)                                                  *)
 (*                                                                        *)
-(*  You may redistribute it and/or modify it under the terms of the GNU   *)
+(*  you can redistribute it and/or modify it under the terms of the GNU   *)
 (*  Lesser General Public License as published by the Free Software       *)
-(*  Foundation, version 3.                                                *)
+(*  Foundation, version 2.1.                                              *)
 (*                                                                        *)
-(*  It is distributed in the hope that it will be useful, but WITHOUT     *)
-(*  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY    *)
-(*  or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General      *)
-(*  Public License for more details.                                      *)
+(*  It is distributed in the hope that it will be useful,                 *)
+(*  but WITHOUT ANY WARRANTY; without even the implied warranty of        *)
+(*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *)
+(*  GNU Lesser General Public License for more details.                   *)
 (*                                                                        *)
-(*  See the GNU Lesser General Public License version 3 for more          *)
-(*  details (enclosed in the file LICENSE).                               *)
+(*  See the GNU Lesser General Public License version 2.1                 *)
+(*  for more details (enclosed in the file licenses/LGPLv2.1).            *)
 (*                                                                        *)
 (**************************************************************************)
 
@@ -24,6 +24,10 @@
 open Cil_types
 
 let label_function_name = "__PC__LABEL"
+let seq_function_name = "__PC__LABEL_SEQ"
+let seq_cond_function_name = "__PC__LABEL_SEQ_COND"
+let bind_function_name = "__PC__LABEL_BINDINGS"
+let starting_time = ref 0.
 
 (** Checks if the provided expression is a string constant *)
 let rec cil_isString exp =
@@ -36,8 +40,8 @@ let to_lval_exp varinfo =  (* transform a varinfo into expression *)
   Cil.dummy_exp (Lval (Cil.var varinfo))
 
 let location_string loc =
-  let line = (fst loc).Lexing.pos_lnum in
-  let file = Filename.basename (fst loc).Lexing.pos_fname in
+  let line = (fst loc).Filepath.pos_lnum in
+  let file = Filename.basename (Filepath.Normalized.to_pretty_string (fst loc).Filepath.pos_path) in
   file^":"^string_of_int line
 
 let rec last_element list =
@@ -98,7 +102,7 @@ let is_label_stmt stmt lblid =
     begin
       match Cil.isInteger idexp, cil_isString tagexp  with
       | Some id, Some _ ->
-        if Integer.to_int id == lblid then
+        if Integer.to_int id = lblid then
           true, true
         else
           true, false
@@ -161,7 +165,7 @@ let collect_fun_param fdec =
 
 (* Create a predicate from an operator, an expression, and an integer *)
 let const_to_pred op exp cst =
-  let var = Logic_utils.expr_to_term ~cast:false exp in
+  let var = Logic_utils.expr_to_term ~coerce:true exp in
   let value = Cil.lconstant cst in
   Logic_const.prel (op, var, value)
 
@@ -185,10 +189,10 @@ let interval_to_congruence_exp lv min max rem modulo = (* convertit interval+ co
   if Integer.equal modulo Integer.one then
     res
   else
-    let var = Logic_utils.expr_to_term true lv in
+    let var = Logic_utils.expr_to_term ~coerce:true lv in
     let cst_mod = Cil.lconstant modulo in
     let cst_rem = Cil.lconstant rem in
-    let ltyp = Logic_utils.typ_to_logic_type (Cil.typeOf lv) in
+    let ltyp = Logic_utils.coerce_type (Cil.typeOf lv) in
     let left = Logic_const.term (TBinOp (Mod, var, cst_mod)) ltyp in
     let congru_assert =  Logic_const.prel (Req, left, cst_rem) in
     if Extlib.has_some res then
@@ -204,14 +208,14 @@ let pred_of_ival ~about:lve iv =
     None (* Should be FALSE ?? *)
   else if Ival.is_singleton_int iv then
     Some (const_to_pred Req lve (Ival.project_int iv))
-  else
-    match iv with
-    | Ival.Set arr when Array.length arr <= max_enumerate ->
-      let predarr = Array.map (fun v -> const_to_pred Req lve v) arr in
-      Some (Logic_const.pors (Array.to_list predarr))
-    | Ival.Set _ -> interval_to_exp lve (Ival.min_int iv) (Ival.max_int iv) (* si c'est un set simplifie avec un intervale *)
-    | Ival.Top (min,max,rem,modulo) -> interval_to_congruence_exp lve min max rem modulo
-    | _ -> None
+  else if Ival.is_int iv then
+    match Ival.project_small_set iv with
+    | Some lc when List.length lc <= max_enumerate ->
+      let predlc = List.map (fun v -> const_to_pred Req lve v) lc in
+      Some (Logic_const.pors predlc)
+    | _ -> let min, max, rem, modulo = Ival.min_max_r_mod iv in
+      interval_to_congruence_exp lve min max rem modulo
+   else None
 
 exception Project_Ival_Fail
 exception Project_Ival_Unreachable
@@ -249,3 +253,23 @@ let exp_to_pred ~at expr =
   | Project_Ival_Unreachable ->
     Options.debug "Can't get %a value in stmt:[%d] code unreachable" Printer.pp_exp expr at.sid;
     None
+
+
+let rec numbered_backup n filepath =
+  let filepathn = filepath^"."^string_of_int n in
+  if Sys.file_exists filepathn then
+    numbered_backup (n+1) filepath
+  else
+    Sys.rename filepath filepathn
+
+let backup filepath =
+  if Sys.file_exists filepath then
+    numbered_backup 1 filepath
+
+let replace_or_add_list tbl key value =
+  if Hashtbl.mem tbl key then begin
+    let old = Hashtbl.find tbl key in
+    Hashtbl.replace tbl key (value::old)
+  end
+  else
+    Hashtbl.add tbl key [value]

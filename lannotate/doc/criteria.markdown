@@ -2,21 +2,21 @@
 (*                                                                        *)
 (*  This file is part of Frama-C.                                         *)
 (*                                                                        *)
-(*  Copyright (C) 2013-2018                                               *)
+(*  Copyright (C) 2007-2020                                               *)
 (*    CEA (Commissariat à l'énergie atomique et aux énergies              *)
 (*         alternatives)                                                  *)
 (*                                                                        *)
-(*  You may redistribute it and/or modify it under the terms of the GNU   *)
+(*  you can redistribute it and/or modify it under the terms of the GNU   *)
 (*  Lesser General Public License as published by the Free Software       *)
-(*  Foundation, version 3.                                                *)
+(*  Foundation, version 2.1.                                              *)
 (*                                                                        *)
-(*  It is distributed in the hope that it will be useful, but WITHOUT     *)
-(*  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY    *)
-(*  or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General      *)
-(*  Public License for more details.                                      *)
+(*  It is distributed in the hope that it will be useful,                 *)
+(*  but WITHOUT ANY WARRANTY; without even the implied warranty of        *)
+(*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *)
+(*  GNU Lesser General Public License for more details.                   *)
 (*                                                                        *)
-(*  See the GNU Lesser General Public License version 3 for more          *)
-(*  details (enclosed in the file LICENSE).                               *)
+(*  See the GNU Lesser General Public License version 2.1                 *)
+(*  for more details (enclosed in the file licenses/LGPLv2.1).            *)
 (*                                                                        *)
 (**************************************************************************)
 
@@ -51,7 +51,7 @@ for each label.
 
 This criterion supports the `-lannot-allbool` flag.
 
-### CC (Conditition Coverage)
+### CC (Condition Coverage)
 
 The following example:
 ```c
@@ -188,7 +188,7 @@ becomes:
 pc_label(A < B && ((A - B) + 1 <= N && - ((A - B) + 1) <= N),1,"LIMIT");
 if (i < 10) ...
 ```
-`X <= N && -X <= N)` in an equivalent to `abs(X) <= N` when N is positive (the COQ proof can be found in LIMIT_proof.v),
+`X <= N && -X <= N)` in an equivalent to `abs(X) <= N` when N is positive,
 `A (<|<=|=>|>) B` becomes `(A - B) ((+|-) 1)?`, so it is equal to 0 when `i`'s value is the limit.
 In this example the condition is true only if `i` equal 9
 
@@ -277,13 +277,6 @@ pc_label_sequence(1,1,2,2,"17",0);
 Dataflow
 --------
 
-DU-pair :
- _A pair of definition and use for some variable, such that at least one DU path exists
-from the definition to the use._
-
-DU-path :
-_A definition-clear path on the CFG strating from a definition to a use of a same variable_
-
 `pc_label_sequence(1,2,3,4,5,6,...)` represente a def/use in the program:
 * 1 : the condition, often set as true
 * 2 : a unique identifier for this sequence
@@ -298,7 +291,7 @@ variable :
 * 1 : Always 0 (Useless?)
 * 2 : Variable ID
 
-in Defuse/Alldefs/Alluses, since sequences length is always 2,
+in DUC/ADC/AUC, since sequences length is always 2,
 `pc_label_sequence(1,ID,1,2,ID,0)` means it is a Definition, and
 `pc_label_sequence(1,ID,2,2,ID,0)` means it is a Use.
 
@@ -307,13 +300,10 @@ in hyperlabels:
 * `+` means `\/` (logical or)
 
 
-### Defuse (DU-pairs coverage)
+### DUC (Def-Use pairs coverage)
 
 ```
-v: variable
-For all definition d of v:
-    For all use u of v that follows d in the CFG:
-        Is there a DU-path between d and u?
+Objectives : Cover independently each def-use pair
 ```
 the following example :
 ```c
@@ -350,13 +340,10 @@ and hyperlabels:
 <s906|; ;>,
 ```
 
-### Alldefs (All-definitions coverage)
+### ADC (All-definitions coverage)
 
 ```
-v: variable
-For all definition d of v:
-	There exists a use u of v that follows d in the CFG such that
-	there is a DU-path between d and u
+Objectives : cover at least one def-clear path between a definition and one of its uses
 ```
 the following example :
 ```c
@@ -392,13 +379,10 @@ and hyperlabels:
 <s906|; ;>,
 ```
 
-### Alluses (All-uses coverage)
+### AUC (All-uses coverage)
 
 ```
-v: variable
-For all definition d of v:
-	For all use u of v that follows d in the CFG:
-		There is a DU-path between d and u
+Objectives : cover a def-clear path between a definition to each of its uses
 ```
 the following example:
 ```c
@@ -432,57 +416,6 @@ and hyperlabels:
 ```
 <s821.s863|; ;>,
 <s906|; ;>,
-```
-
-### Context (Context coverage)
-
-This criteria is applied on expression that use more than 1 previously declared variable
-```
-A: variable
-B: variable
-E: expression that use both A and B
-For all definitions and of A and B that precedes E in the CFG:
-	dA = [dA1,dA2,...,dAn]
-	dB = [dB1,dB2,...,dBn]
-	Context = dA × dB
-	        = [(dA1,dB1),(dA1,dB2),...(dA1,dBn),(dA2,dB1)...,(dAn,dBn)]
-	For all n-uplet C in Context, there is a DU-path between C's definitions and D
-```
-the following example:
-```c
-int main(){
-	int a = 0;
-	int b = 0;
-	if (a){
-		a = 1;
-	}
-	return a+b;
-}
-```
-becomes:
-```c
-int main(void){
-    pc_label_sequence_condition(0,"41");
-    int a = 0;
-    pc_label_sequence(1,1,1,3,"41",0);
-    pc_label_sequence_condition(0,"42");
-    int b = 0;
-    pc_label_sequence(1,1,2,3,"42",0);
-    pc_label_sequence(1,2,1,3,"42",0);
-    if (a) {
-        pc_label_sequence_condition(0,"41");
-        a = 1;
-        pc_label_sequence(1,2,2,3,"41",0);
-    }
-    pc_label_sequence(1,1,3,3,"N/A",0);
-    pc_label_sequence(1,2,3,3,"N/A",0);
-    return a + b;
-}
-```
-and hyperlabels:
-```
-<s1|; ;>,
-<s2|; ;>,
 ```
 
 Others

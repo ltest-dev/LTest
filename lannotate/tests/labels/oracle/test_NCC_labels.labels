@@ -1,0 +1,13 @@
+# id, status, tag, origin_loc, current_loc, emitter, drivers, exec_time
+1, unknown, NCC, test_NCC.c:7, , LAnnot, , 0.
+2, unknown, NCC, test_NCC.c:7, , LAnnot, , 0.
+3, unknown, NCC, test_NCC.c:7, , LAnnot, , 0.
+4, unknown, NCC, test_NCC.c:7, , LAnnot, , 0.
+5, unknown, NCC, test_NCC.c:7, , LAnnot, , 0.
+6, unknown, NCC, test_NCC.c:7, , LAnnot, , 0.
+7, unknown, NCC, test_NCC.c:7, , LAnnot, , 0.
+8, unknown, NCC, test_NCC.c:7, , LAnnot, , 0.
+9, unknown, NCC, test_NCC.c:7, , LAnnot, , 0.
+10, unknown, NCC, test_NCC.c:7, , LAnnot, , 0.
+11, unknown, NCC, test_NCC.c:7, , LAnnot, , 0.
+12, unknown, NCC, test_NCC.c:7, , LAnnot, , 0.

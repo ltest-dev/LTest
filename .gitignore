@@ -21,6 +21,7 @@ autom4te.cache
 config.log
 config.status
 configure
+Makefile
 
 #Lreplay
 lreplay/lreplay
@@ -29,4 +30,9 @@ lreplay/parser.ml
 lreplay/parser.mli
 lreplay/foreignCode.ml
 
-lannotate/Makefile
+#LUncov
+luncov/parser.output
+luncov/parser.ml
+luncov/parser.mli
+luncov/lexer.ml
+luncov/MAkefile

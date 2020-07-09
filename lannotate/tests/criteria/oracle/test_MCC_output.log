@@ -1,6 +1,0 @@
-[kernel] Parsing tests/criteria/test_MCC.c (with preprocessing)
-[kernel] Parsing tests/criteria/test_MCC.c (with preprocessing)
-[lannot] apply annotations for MCC
-[lannot] write modified C file (to tests/criteria/result/test_MCC_labels.c)
-[lannot] write label data (to tests/criteria/result/test_MCC_labels.labels)
-[lannot] finished

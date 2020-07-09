@@ -1,0 +1,6 @@
+[kernel] Parsing tests/labels/test_LIMIT.c (with preprocessing)
+[lannot] apply annotations for LIMIT
+[lannot] write modified C file (to tests/labels/result/test_LIMIT_labels.c)
+[lannot] write label data (to tests/labels/result/test_LIMIT_labels.labels)
+[lannot] 4 labels/sequences created
+[lannot] finished

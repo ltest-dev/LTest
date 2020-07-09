@@ -1,8 +1,0 @@
-[kernel] Parsing tests/criteria/test_defuse.c (with preprocessing)
-[kernel] Parsing tests/criteria/test_defuse.c (with preprocessing)
-[lannot] apply annotations for defuse
-[lannot] write hyperlabel data (to tests/criteria/result/test_defuse_labels.hyperlabels)
-[lannot] Total number of sequences = 36
-[lannot] write modified C file (to tests/criteria/result/test_defuse_labels.c)
-[lannot] write label data (to tests/criteria/result/test_defuse_labels.labels)
-[lannot] finished

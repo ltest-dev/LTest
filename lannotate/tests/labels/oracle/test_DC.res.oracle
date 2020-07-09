@@ -1,0 +1,6 @@
+[kernel] Parsing tests/labels/test_DC.c (with preprocessing)
+[lannot] apply annotations for DC
+[lannot] write modified C file (to tests/labels/result/test_DC_labels.c)
+[lannot] write label data (to tests/labels/result/test_DC_labels.labels)
+[lannot] 2 labels/sequences created
+[lannot] finished

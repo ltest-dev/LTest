@@ -1,0 +1,5 @@
+# id, status, tag, origin_loc, current_loc, emitter, drivers, exec_time
+1, unknown, LIMIT, test_LIMIT.c:6, , LAnnot, , 0.
+2, unknown, LIMIT, test_LIMIT.c:7, , LAnnot, , 0.
+3, unknown, LIMIT, test_LIMIT.c:8, , LAnnot, , 0.
+4, unknown, LIMIT, test_LIMIT.c:9, , LAnnot, , 0.

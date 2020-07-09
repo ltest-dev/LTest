@@ -2,21 +2,21 @@
 (*                                                                        *)
 (*  This file is part of Frama-C.                                         *)
 (*                                                                        *)
-(*  Copyright (C) 2013-2018                                               *)
+(*  Copyright (C) 2007-2020                                               *)
 (*    CEA (Commissariat à l'énergie atomique et aux énergies              *)
 (*         alternatives)                                                  *)
 (*                                                                        *)
-(*  You may redistribute it and/or modify it under the terms of the GNU   *)
+(*  you can redistribute it and/or modify it under the terms of the GNU   *)
 (*  Lesser General Public License as published by the Free Software       *)
-(*  Foundation, version 3.                                                *)
+(*  Foundation, version 2.1.                                              *)
 (*                                                                        *)
-(*  It is distributed in the hope that it will be useful, but WITHOUT     *)
-(*  ANY WARRANTY; without even the implied warranty of MERCHANTABILITY    *)
-(*  or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU Lesser General      *)
-(*  Public License for more details.                                      *)
+(*  It is distributed in the hope that it will be useful,                 *)
+(*  but WITHOUT ANY WARRANTY; without even the implied warranty of        *)
+(*  MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the         *)
+(*  GNU Lesser General Public License for more details.                   *)
 (*                                                                        *)
-(*  See the GNU Lesser General Public License version 3 for more          *)
-(*  details (enclosed in the file LICENSE).                               *)
+(*  See the GNU Lesser General Public License version 2.1                 *)
+(*  for more details (enclosed in the file licenses/LGPLv2.1).            *)
 (*                                                                        *)
 (**************************************************************************)
 
@@ -55,13 +55,25 @@ end
 let annotators = Hashtbl.create 10
 
 let nextId = ref 1
+let nextBindingId = ref 1
+let nextIdHl = ref 1
 
 let getCurrentLabelId () = !nextId - 1
+let getCurrentBindingId () = !nextBindingId - 1
+let getCurrentHLId () = !nextIdHl - 1
 
 let next () =
   let id = !nextId in
   incr nextId;
   id
+let next_binding () =
+  let id = !nextBindingId in
+  incr nextBindingId;
+  id
+let next_hl () =
+  let id = !nextIdHl in
+  incr nextIdHl;
+  string_of_int id
 
 let nocollect _ = ()
 
@@ -128,23 +140,14 @@ module RegisterWithExtraTags (A : ANNOTATOR_WITH_EXTRA_TAGS) = struct
 end
 
 let shouldInstrument fun_varinfo =
-  let names = Options.FunctionNames.get () in
+  let do_names = Options.DoFunctionNames.get () in
+  let skip_names = Options.SkipFunctionNames.get () in
   let f (kf : Cil_datatype.Kf.Set.elt ) =
     (Cil_datatype.Kf.vi kf).vname =  fun_varinfo.vname
   in
+  not (Cil_datatype.Kf.Set.exists f skip_names) &&
   (* TODO filter builtin functions *)
-  (*Cil_datatype.Kf.Set.is_empty names || Cil_datatype.Kf.Set.exists f names*)
-  (* Modif pour polarSSL *)
-  let inlineNames = Options.InlineException.get () in
-  if  Cil_datatype.Kf.Set.is_empty names then begin
-    if (not fun_varinfo.vinline || Options.Inline.get ()) then
-      true
-    else begin
-      if Cil_datatype.Kf.Set.is_empty inlineNames then
-        false
-      else
-        Cil_datatype.Kf.Set.exists f inlineNames
-    end
-  end
+  if  Cil_datatype.Kf.Set.is_empty do_names then
+    not (fun_varinfo.vinline) || Options.Inline.get ()
   else
-    Cil_datatype.Kf.Set.exists f names
+    Cil_datatype.Kf.Set.exists f do_names

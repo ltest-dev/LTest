@@ -1,9 +1,0 @@
-# id, status, tag, origin_loc, current_loc, emitter, exec_time
-1,unknown,RACC,test_RACC.c:7,,lannot,0.
-2,unknown,RACC,test_RACC.c:7,,lannot,0.
-3,unknown,RACC,test_RACC.c:10,,lannot,0.
-4,unknown,RACC,test_RACC.c:10,,lannot,0.
-5,unknown,RACC,test_RACC.c:10,,lannot,0.
-6,unknown,RACC,test_RACC.c:10,,lannot,0.
-7,unknown,RACC,test_RACC.c:10,,lannot,0.
-8,unknown,RACC,test_RACC.c:10,,lannot,0.

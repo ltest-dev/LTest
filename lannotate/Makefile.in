@@ -2,7 +2,7 @@
 #                                                                        #
 #  This file is part of Frama-C.                                         #
 #                                                                        #
-#  Copyright (C) 2007-2018                                               #
+#  Copyright (C) 2007-2020                                               #
 #    CEA (Commissariat à l'énergie atomique et aux énergies              #
 #         alternatives)                                                  #
 #                                                                        #
@@ -36,12 +36,14 @@ endif
 PLUGIN_DIR ?=.
 PLUGIN_ENABLE:=@ENABLE_LANNOTATE@
 PLUGIN_NAME:=LAnnotate
-PLUGIN_CMO:= options utils ast_const bes simplify annotators wm \
-             logical partition ldataflow context function statement lloop \
-             register
+
+PLUGIN_CMO:= options utils ast_const bes simplify annotators \
+             l_wm l_logical l_partition l_dataflows \
+             l_function l_statement l_loop register
+
 PLUGIN_DISTRIBUTED:=$(PLUGIN_ENABLE)
 PLUGIN_DISTRIB_EXTERNAL:= Makefile.in configure.ac configure
-PLUGIN_TESTS_DIRS:=options criteria
+PLUGIN_TESTS_DIRS:= labels hyperlabels
 
 ################
 # Generic part #
@@ -58,7 +60,6 @@ CONFIG_STATUS_DIR=$(FRAMAC_SRC)
 else
 CONFIG_STATUS_DIR=.
 endif
-
 $(LAnnotate_DIR)/Makefile: $(LAnnotate_DIR)/Makefile.in \
                          $(CONFIG_STATUS_DIR)/config.status
 	cd $(CONFIG_STATUS_DIR) && ./config.status --file $@

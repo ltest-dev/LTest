@@ -1,0 +1,9 @@
+[kernel] Parsing tests/hyperlabels/test_ADC.c (with preprocessing)
+[lannot] apply annotations for ADC
+[lannot] write hyperlabel data (to tests/hyperlabels/result/test_ADC_labels.hyperlabels)
+[lannot] Total number of sequences = 29
+[lannot] Total number of hyperlabels = 15
+[lannot] write modified C file (to tests/hyperlabels/result/test_ADC_labels.c)
+[lannot] write label data (to tests/hyperlabels/result/test_ADC_labels.labels)
+[lannot] 29 labels/sequences created
+[lannot] finished

@@ -1,0 +1,6 @@
+[kernel] Parsing tests/labels/test_NCC.c (with preprocessing)
+[lannot] apply annotations for NCC
+[lannot] write modified C file (to tests/labels/result/test_NCC_labels.c)
+[lannot] write label data (to tests/labels/result/test_NCC_labels.labels)
+[lannot] 12 labels/sequences created
+[lannot] finished

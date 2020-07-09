@@ -1,0 +1,6 @@
+[kernel] Parsing tests/labels/test_annot_allbool.c (with preprocessing)
+[lannot] apply annotations for DC
+[lannot] write modified C file (to tests/labels/result/test_annot_allbool_labels.c)
+[lannot] write label data (to tests/labels/result/test_annot_allbool_labels.labels)
+[lannot] 8 labels/sequences created
+[lannot] finished

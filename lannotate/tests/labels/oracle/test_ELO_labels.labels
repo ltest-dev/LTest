@@ -1,0 +1,13 @@
+# id, status, tag, origin_loc, current_loc, emitter, drivers, exec_time
+1, unknown, ELO, test_ELO.c:8, , LAnnot, , 0.
+2, unknown, ELO, test_ELO.c:9, , LAnnot, , 0.
+3, unknown, ELO, test_ELO.c:10, , LAnnot, , 0.
+4, unknown, ELO, test_ELO.c:11, , LAnnot, , 0.
+5, unknown, ELO, test_ELO.c:12, , LAnnot, , 0.
+6, unknown, ELO, test_ELO.c:13, , LAnnot, , 0.
+7, unknown, ELO, test_ELO.c:15, , LAnnot, , 0.
+8, unknown, ELO, test_ELO.c:16, , LAnnot, , 0.
+9, unknown, ELO, test_ELO.c:17, , LAnnot, , 0.
+10, unknown, ELO, test_ELO.c:18, , LAnnot, , 0.
+11, unknown, ELO, test_ELO.c:19, , LAnnot, , 0.
+12, unknown, ELO, test_ELO.c:20, , LAnnot, , 0.
